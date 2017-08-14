@@ -15,7 +15,7 @@ class CheckList extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'check_lists';
+    protected $table = 'check_list';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

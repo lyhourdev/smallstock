@@ -4,7 +4,7 @@
     <div class="login-box" >
         {{--style="position:fixed;position: absolute; left: 40%"--}}
         <div class="login-logo">
-            <a href="{{ asset('vendor/adminlte/') }}/index2.html"><b style="color: #2f2c26;">STOCK</b> <span style="color: #2f2c26;">Management</span></a>
+            <a href="{{ asset('vendor/adminlte/') }}/index2.html"><b style="color: #3c8dbc;">STOCK</b> <span style="color: #3c8dbc;">Management</span></a>
         </div>
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>

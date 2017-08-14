@@ -15,7 +15,15 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body style="background-attachment: fixed; overflow: hidden;" background="{{asset("pos/img/login/background.jpg")}}" >
+{{--style="background-attachment: fixed; overflow: hidden;" background="{{asset("pos/img/login/background.jpg")}}"--}}
+<body>
+<style>
+    body {
+        overflow: hidden;
+        background: radial-gradient(ellipse at bottom left, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25), rgba(42, 60, 87, 0.4)), linear-gradient(135deg, #670d10, #092756);
+    }
+
+</style>
     @yield('content')
 <!-- jQuery 2.2.3 -->
 <script src="{{ asset('vendor/adminlte/') }}/plugins/jQuery/jquery-2.2.3.min.js"></script>

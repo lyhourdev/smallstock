@@ -1,19 +1,6 @@
 @if ($crud->model->translationEnabled())
 <input type="hidden" name="locale" value={{ $crud->request->input('locale')?$crud->request->input('locale'):App::getLocale() }}>
 @endif
-<style>
-    @media (min-width: 992px){
-        .col-md-offset-2 {
-            margin-left: 0.5% !important;
-        }
-    }
-    @media (min-width: 992px){
-        .col-md-8 {
-            width: 99% !important;
-        }
-    }
-
-</style>
 {{-- See if we're using tabs --}}
 @if ($crud->tabsEnabled())
     @include('crud::inc.show_tabbed_fields')

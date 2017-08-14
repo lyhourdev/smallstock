@@ -17,24 +17,76 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
+    Route::get('home', function () {
+        return view('pos.home');
+    });
+
     Route::get('sale', function () {
         return view('pos.sale');
     });
-    Route::get('invoice', function () {
-        return view('pos.invoice');
+
+    Route::get('invoice-landscape-a5', function () {
+        return view('pos.invoice.invoice_landscape_a5');
     });
-    Route::get('checklist', function () {
-        return view('pos.checklist');
+    Route::get('p_invoice', function () {
+        return view('pos.invoice.p_invoice');
+    });
+
+    Route::get('invoice', function () {
+        return view('pos.invoice.invoice');
     });
     Route::get('invoice-print', function () {
-        return view('pos.invoice_print');
+        return view('pos.invoice.invoice_print');
     });
+    Route::get('cash-receipt', function () {
+        return view('pos.invoice.cash_receipt');
+    });
+    Route::get('print-receipt', function () {
+        return view('pos.invoice.print_receipt');
+    });
+
+    Route::get('print-rks', function () {
+        return view('pos.invoice.print_rks');
+    });
+    Route::get('print_', function () {
+        return view('pos.invoice.print_a4');
+    });
+
+    Route::get('tax-invoice', function () {
+        return view('pos.invoice.tax_invoice');
+    });
+ Route::get('tax-invoice2', function () {
+        return view('pos.invoice.tax_invoice2');
+    });
+
+Route::get('tax-invoice3', function () {
+        return view('pos.invoice.tax_invoice3');
+    });
+
+    Route::get('print-invoice', function () {
+        return view('pos.invoice.print_invoice');
+    });
+
+    Route::get('list-count-stock', function () {
+        return view('pos.stock.list_count_stock');
+    });
+
+    Route::get('home', function () {
+        return view('pos.home');
+    });
+
+
+
     // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('item-category', 'Admin\ItemCategoryCrudController');
     CRUD::resource('customers', 'Admin\CustomersCrudController');
     CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
     CRUD::resource('purchase', 'Admin\PurchaseCrudController');
-    CRUD::resource('items', 'Admin\ItemCrudController');
+    CRUD::resource('items', 'Admin\CheckListCrudController');
+
+
+
+    CRUD::resource('checklist', 'Admin\ItemCrudController');
     // [...] other routes
 
     Route::get('ajax-customer-phone', 'Admin\CustomersCrudController@getPhones');

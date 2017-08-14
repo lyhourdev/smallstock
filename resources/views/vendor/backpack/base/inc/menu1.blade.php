@@ -4,7 +4,7 @@
         <!-- ========== Top menu items (ordered left) ========== -->
         <!-- =================================================== -->
 
-        <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
+         <li><a href="{{ url('/admin/dashboard') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
 
         <!-- ========== End of top menu left items ========== -->
 
@@ -15,34 +15,27 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
 
-        <li class=" hidden-xs" style="background-color: #108042;">
-            <a href="{{ url('/admin/sale') }}">
-                <i class="fa fa-th-large"> POS</i>
+        <li class=" hidden-xs" style="background-color: #4a8009;">
+            <a href="{{ url('/admin/dashboard') }}">
+                <i class="fa fa-dashboard"> Dashboard</i>
 
             </a>
         </li>
-        <li class=" hidden-xs" style="background-color: #27801e;">
-            <a href="{{ url('/admin/elfinder')}}">
+        <li class=" hidden-xs" style="background-color: #4a8009;">
+            <a href="{{ url('/admin/elfinder') }}" >
                 <i class="fa fa-gears"> Setting</i>
 
             </a>
         </li>
         <li class=" hidden-xs" style="background-color: #328005;">
-            <a href="{{ url('/admin/customers') }}">
+            <a href="{{ url('/admin/customers') }}" >
                 <i class="fa  fa-user"> Customer</i>
 
             </a>
         </li>
-
         <li class=" hidden-xs" style="background-color: #328005;">
-            <a href="{{ url('/admin/purchase') }}" >
+            <a href="{{ url('/admin/purchase') }}">
                 <i class="fa fa-cart-arrow-down"> Purchase</i>
-
-            </a>
-        </li>
-        <li class=" hidden-xs" style="background-color: #328005;">
-            <a href="{{ url('/admin/open-items') }}">
-                <i class="fa fa-book"> Open Item</i>
 
             </a>
         </li>
@@ -53,7 +46,24 @@
 
             </a>
         </li>
+        <li class=" hidden-xs" style="background-color: #13803a;">
+            <a href="#" >
+                <i class="fa fa-th-large"> Profit</i>
 
+            </a>
+        </li>
+        <li class=" hidden-xs" style="background-color: #0d8014;">
+            <a href="#" >
+                <i class="fa fa-print"> List Sale</i>
+
+            </a>
+        </li>
+        <li class=" hidden-xs" style="background-color: #24803e;">
+            <a href="#" >
+                <i class="fa fa-th-large"> Today Sale</i>
+
+            </a>
+        </li>
         <li class=" hidden-xs" style="background-color: #14806c;">
             <a href="#">
                 <i class="fa fa-th-large"> Register</i>
