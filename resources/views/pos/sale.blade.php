@@ -1243,7 +1243,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="saleman">Customer Nane</label>
+                                            <label for="saleman">Customer Name</label>
                                             <input type="text" name="date" value="Mengeang" readonly class="form-control input-tip">
                                         </div>
                                     </div>
