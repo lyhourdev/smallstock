@@ -36,13 +36,13 @@ class PurchaseCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'purchase_date',
+            'name' => '_date_',
             'label' => 'Purchase Date',
         ]);
 
         $this->crud->addColumn([
             'name' => 'customer_id',
-            'label' => 'Purchase customer',
+            'label' => 'Customer Purchase',
         ]);
 
         $this->crud->addColumn([
@@ -55,41 +55,11 @@ class PurchaseCrudController extends CrudController
             'label' => 'Description',
         ]);
 
-        $this->crud->addField([
-            'name' => 'purchase_number',
-            'label' => 'Purchase Number',
-            'type' => 'purchase',
-        ]);
-
-//        $this->crud->addField([
-//            'name' => 'purchase_number',
-//            'label' => 'Purchase Number',
-//            'type' => 'text',
-//        ]);
-
-//        $this->crud->addField([
-//            'name' => 'purchase_date',
-//            'label' => 'Purchase Date',
-//            'type' => 'date_picker',
-//        ]);
-//
-//        $this->crud->addField([
-//            'name' => 'customer_id',
-//            'label' => 'Purchase customer',
-//            'type' => 'select2_from_array',
-//            'options' => ['0' => 'One', '1' => 'Two', '3' => 'TwoA', '4' => 'TwoV', '5' => 'TwoC', '6' => 'TwoD',],
-//            'allows_null' => false,
-//        ]);
-//
-//        $this->crud->addField([
-//            'name' => 'ref',
-//            'label' => 'Ref',
-//        ]);
 
         $this->crud->addField([
-            'name' => 'description',
-            'label' => 'Description',
-            'type' => 'textarea',
+            'name' => 'purchase',
+            'type' => 'view',
+            'view' => 'pos.purchase'
         ]);
 
         $this->crud->addField([

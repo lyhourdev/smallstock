@@ -19,9 +19,12 @@ class Purchase extends Model
     protected $primaryKey = 'id';
      public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['purchase_number','purchase_date','customer_id','customer_id','ref','description','user_id'];
+     protected $fillable = ['purchase_number','_date_','customer_id','ref','description','user_id'];
     // protected $hidden = [];
     // protected $dates = [];
+
+
+
 
     /*
     |--------------------------------------------------------------------------
