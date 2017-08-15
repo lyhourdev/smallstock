@@ -97,9 +97,7 @@
                 <img src="{{asset('/pos/img/logo.jpg')}}" width="70" height="60" alt="IT Group(Phnom Penh)">
                 <!--<img style="width:100%;" src="http://cloudnet-myanmar.com/iCloudERP_v3_Production/assets/Aylogo/logo501.jpg"> -->
                 <!--<h3 style="text-transform:uppercase;">Cloudnet(Phnom Penh)</h3>-->
-                <p>#12Eo Phnom Penh 12001 Kondal Cambodia<br>Tel: 			<!--<div style="font-size:13px;">#138E0, St. 13. Sangkat Phsa kandal Phnom Penh<br/>Tel: 092/093/069 311 138 www.a-ycollection.com</div>
-			<hr style="border: 1px solid black; margin-top: 10px; margin-bottom: 10px;"/>-->
-
+                <p>#12Eo Phnom Penh 12001 Kondal Cambodia<br>Tel:​​ 098 794 242
                 <div style="font-size:11px;">
                     <table style="width: 100%;">
                         <tbody style="font-size: 12px;">
@@ -134,6 +132,7 @@
                         <th>No</th>
                         <th>Description</th>
                         <!--<th style="color:white !important;">Serial</th>-->
+                        <th style="text-align:center;">Unit</th>
                         <th style="text-align:center;">Qty</th>
                         <th style="text-align:right;">Price</th>
                         <th style="padding-left:10px;padding-right:10px;text-align:right;">Amount </th>
@@ -143,12 +142,14 @@
                     <tr class="item">
                         <td class="text-left">1</td>
                         <td class="text-left"><img src="{{asset('/pos/img/logo.jpg')}}" width="60" height="50" alt="IT Group(Phnom Penh)"> DESTOP Acer</td>
-                        <td class="text-center">1.00</td>
+                        <td class="text-center">ជី</td>
+                        <td class="text-center">1</td>
                         <td class="text-center"  style="text-align:right; width:65px !important">$ 460.00</td><td class="text-right">$ 460.00</td>
                     <tr class="item">
                         <td class="text-left">2</td>
                         <td class="text-left"><img src="{{asset('/pos/img/logo.jpg')}}" width="60" height="50" alt="IT Group(Phnom Penh)"> iphone 6 black</td>
-                        <td class="text-center">1.00</td>
+                        <td class="text-center">ជី</td>
+                        <td class="text-center">1</td>
                         <td class="text-center"  style="text-align:right; width:65px !important">$ 300.00</td><td class="text-right">$ 300.00</td>
                     </tbody>
                     <tfoot>
@@ -160,11 +161,11 @@
                         <td style="text-align:right;width:35%;">Sub Total (USD) :</td>
                         <td style="text-align:right;">$ 760.00</td>
                     </tr>
-                    <tr>
-                        <td style="text-align:left;">ពន្ធ</td>
-                        <td style="text-align:right;width:35%;">Order Tax (USD) :</td>
-                        <td style="text-align:right;">$ 0.00</td>
-                    </tr>
+                    {{--<tr>--}}
+                        {{--<td style="text-align:left;">ពន្ធ</td>--}}
+                        {{--<td style="text-align:right;width:35%;">Order Tax (USD) :</td>--}}
+                        {{--<td style="text-align:right;">$ 0.00</td>--}}
+                    {{--</tr>--}}
                     <tr>
                         <td style="text-align:left;">បញ្ចុះតំលៃ</td>
                         <td style="text-align:right;width:35%;">Discount (USD) :</td>

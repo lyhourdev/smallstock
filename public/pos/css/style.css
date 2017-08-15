@@ -2,6 +2,9 @@
 #container{
     /*border: solid red;*/
     margin-top: 5px;
+
+    position: relative;
+    z-index: 1;
 }
 #container::after{
     content: ""; display: block;
@@ -9,13 +12,13 @@
 }
 #left-panel{
     width: 33.9%;
-    height:900px;
+    height:970px;
     background-color: #d2d6de;
     float: left;
 }
 #right-section{
     width: 66%;
-    height: 900px;
+    height: 970px;
     background-color: #bcbec0;
     float: right;
 }
@@ -84,7 +87,7 @@
     min-width: 130px;
     min-height: 185px;
     text-align:  center !important;
-    background-color: rgb(60, 141, 188);
+    background-color: rgb(210, 214, 222);
     border-radius: 10px;
 }
 .name-style{
@@ -167,9 +170,21 @@ padding: 1px !important;
     width: 100%;
 }
 .panel-height{
-    height: 469px;
+    /*height: 688px;*/
     background-color: rgba(211, 211, 211, 0.79);
+
+
+
 }
+.table-show-pro{
+    width:100%;
+    overflow:auto;
+    max-height:648px;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+
+}
+
 table,tr,td{
     padding-bottom: 5px !important;
     padding-top: 5px !important;

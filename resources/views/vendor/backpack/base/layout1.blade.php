@@ -60,6 +60,7 @@
         min-height: 50px;
         border-radius: 0;
     }
+
 </style>
       <header class="main-header">
         {{--<!-- Logo -->--}}
