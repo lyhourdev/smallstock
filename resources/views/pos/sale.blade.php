@@ -107,8 +107,6 @@
                     </div>
                     <div style="clear:both;"></div>
                 </div>
-
-
                 <div class="col-md-12 col-sm-12 panel-height" style="position: relative;">
                     <div class="tbl-header">
                         <table class="table table-action">
@@ -551,18 +549,7 @@
                         </table>
                     </div>
                 </div>
-                {{--<div class="col-md-12 col-sm-12 total_amount">--}}
-                    {{--<div class="col-md-5 col-sm-6 col-xs-12 title-total">SUB TOTAL:</div>--}}
-                    {{--<div class="col-md-7 col-sm-6 col-xs-12 result-total"><input type="text" value="" readonly placeholder=" $ 1000.00" style="width: 100%;"></div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-12 col-sm-12 total_amount">--}}
-                    {{--<div class="col-md-5 col-sm-6 col-xs-12 title-total">DISCOUNT:</div>--}}
-                    {{--<div class="col-md-7 col-sm-6 col-xs-12 result-total"><input type="text" value="" placeholder=" $ 0.00" style="width: 100%;"></div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-12 col-sm-12 total_amount">--}}
-                    {{--<div class="col-md-5 col-sm-6 col-xs-12 title-total">GRAND TOTAL:</div>--}}
-                    {{--<div class="col-md-7 col-sm-6 col-xs-12 result-total"><input type="text" value="" readonly placeholder=" $ 1000.00" style="width: 100%;"></div>--}}
-                {{--</div>--}}
+
                 <div class="col-md-12 col-sm-12 checkout_amount">
                     <div id="left-bottom">
                         <table id="totalTable" style="width:100%; float:right; padding:5px; color:#000; background: #FFF;">
@@ -579,12 +566,12 @@
                             </tr>
                             <tr>
                                 {{--<td style="padding: 5px 10px; font-size: 16px;">Order Tax--}}
-                                    {{--<a href="#" id="pptax2" data-toggle="modal" data-target="#taxModal">--}}
-                                        {{--<i class="fa fa-edit"></i>--}}
-                                    {{--</a>--}}
+                                {{--<a href="#" id="pptax2" data-toggle="modal" data-target="#taxModal">--}}
+                                {{--<i class="fa fa-edit"></i>--}}
+                                {{--</a>--}}
                                 {{--</td>--}}
                                 {{--<td class="text-right" style="padding: 5px 10px;font-size: 16px; font-weight:bold;">--}}
-                                    {{--<span id="ttax2">(0)0.00</span>--}}
+                                {{--<span id="ttax2">(0)0.00</span>--}}
                                 {{--</td>--}}
 
                                 <td style="padding: 5px 10px; font-size: 16px;">Discount
@@ -605,7 +592,8 @@
                                     <span id="gtotal">1,900.00</span>
                                 </td>
                             </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
 
                         <div class="clearfix"></div>
                         <div id="botbuttons" style="text-align:center;">
@@ -643,7 +631,7 @@
                         </div>
                         <div style="clear:both; height:5px;"></div>
                         {{--<div id="num">--}}
-                            {{--<div id="icon"></div>--}}
+                        {{--<div id="icon"></div>--}}
                         {{--</div>--}}
                         {{--<span id="hidesuspend"></span>--}}
 
@@ -815,6 +803,10 @@
                     </div>
 
                 </div>
+                    <div class="col-md-12">
+
+                    </div>
+
                 {{--====================end items==================--}}
             </div>
 
@@ -1221,8 +1213,6 @@
            </div>
        </div>
     </div>
-
-
     {{--==========================================end fade in ============================--}}
     {{--================payment pop up =============--}}
     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">

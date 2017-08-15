@@ -2,23 +2,23 @@
 #container{
     /*border: solid red;*/
     margin-top: 5px;
-
     position: relative;
     z-index: 1;
 }
 #container::after{
-    content: ""; display: block;
+    content: "";
+    display: block;
     clear: both;
 }
 #left-panel{
     width: 33.9%;
-    height:970px;
+    height:722px;
     background-color: #d2d6de;
     float: left;
 }
 #right-section{
     width: 66%;
-    height: 970px;
+    height: 722px;
     background-color: #bcbec0;
     float: right;
 }
@@ -179,7 +179,8 @@ padding: 1px !important;
 .table-show-pro{
     width:100%;
     overflow:auto;
-    max-height:648px;
+    /*max-height:648px;*/
+    max-height:400px;
     text-align: center;
     border-bottom: 1px solid #DDD;
 

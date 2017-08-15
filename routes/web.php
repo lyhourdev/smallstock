@@ -55,11 +55,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     Route::get('tax-invoice', function () {
         return view('pos.invoice.tax_invoice');
     });
- Route::get('tax-invoice2', function () {
+    Route::get('tax-invoice2', function () {
         return view('pos.invoice.tax_invoice2');
     });
 
-Route::get('tax-invoice3', function () {
+    Route::get('tax-invoice3', function () {
         return view('pos.invoice.tax_invoice3');
     });
 
@@ -75,23 +75,18 @@ Route::get('tax-invoice3', function () {
         return view('pos.home');
     });
 
-
-
     // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('item-category', 'Admin\ItemCategoryCrudController');
     CRUD::resource('customers', 'Admin\CustomersCrudController');
     CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
     CRUD::resource('purchase', 'Admin\PurchaseCrudController');
     CRUD::resource('items', 'Admin\CheckListCrudController');
-
-
-
     CRUD::resource('checklist', 'Admin\ItemCrudController');
+
     // [...] other routes
 
     Route::get('ajax-customer-phone', 'Admin\CustomersCrudController@getPhones');
     Route::get('ajax-customer-name', 'Admin\CustomersCrudController@getName');
-
     Route::get('ajax-open-item-number', 'Admin\OpenItemsCrudController@getOpenNumber');
     Route::get('ajax-open-item-user', 'Admin\OpenItemsCrudController@getUser');
 });
