@@ -8,9 +8,36 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\CustomersRequest as StoreRequest;
 use App\Http\Requests\CustomersRequest as UpdateRequest;
+use Illuminate\Http\Request;
+
+//use Illuminate\Support\Facades\Request;
 
 class CustomersCrudController extends CrudController
 {
+
+
+    public function index2(Request $request)
+    {
+        $search_term = $request->input('q');
+        $page = $request->input('page');
+
+        if ($search_term)
+        {
+            $results = Customers::where('name', 'LIKE', '%'.$search_term.'%')->paginate(10);
+        }
+        else
+        {
+            $results = Customers::paginate(10);
+        }
+
+        return $results;
+    }
+
+    public function show2($id)
+        {
+            return Customers::find($id);
+        }
+
 
     public function getPhones() {
         $term = $this->request->input('term');

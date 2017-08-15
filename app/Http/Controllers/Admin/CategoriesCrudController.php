@@ -2,14 +2,39 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Categories;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\CategoriesRequest as StoreRequest;
 use App\Http\Requests\CategoriesRequest as UpdateRequest;
+use Illuminate\Http\Request;
 
 class CategoriesCrudController extends CrudController
 {
+    public function index2(Request $request)
+    {
+        $search_term = $request->input('q');
+        $page = $request->input('page');
+
+        if ($search_term)
+        {
+            $results = Categories::where('name', 'LIKE', '%'.$search_term.'%')->paginate(10);
+        }
+        else
+        {
+            $results = Categories::paginate(10);
+        }
+
+        return $results;
+    }
+
+    public function show2($id)
+    {
+        return Categories::find($id);
+    }
+
+
     public function setup()
     {
 

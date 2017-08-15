@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Categories extends Model
+class Invoice extends Model
 {
     use CrudTrait;
 
@@ -15,18 +15,13 @@ class Categories extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'item_categories';
+    protected $table = 'invoice';
     protected $primaryKey = 'id';
      public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['parent_id', 'title', 'description', 'status'];
+     protected $fillable = ['invoice_number', '_date_', 'customer_id', 'description', 'deposit', 'user_id', 'status','complete_date', 'complete_price'];
     // protected $hidden = [];
     // protected $dates = [];
-    public function category()
-    {
-        return $this->belongsTo('App\Models\Categories', 'category_id');
-    }
-
 
     /*
     |--------------------------------------------------------------------------

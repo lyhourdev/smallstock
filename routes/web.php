@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
         return view('pos.invoice.p_invoice');
     });
 
-    Route::get('invoice', function () {
+    Route::get('invoice-a', function () {
         return view('pos.invoice.invoice');
     });
     Route::get('invoice-print', function () {
@@ -77,7 +77,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 
     // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('item-category', 'Admin\ItemCategoryCrudController');
+
+
     CRUD::resource('customers', 'Admin\CustomersCrudController');
+
+
+    Route::get('api/customer', 'Admin\CustomersCrudController@index2');
+    Route::get('api/customer/{id}', 'Admin\CustomersCrudController@show2');
+    Route::get('api/category', 'Admin\CategoriesCrudController@index2');
+    Route::get('api/category/{id}', 'Admin\CategoriesCrudController@show2');
+
+
+    CRUD::resource('invoices', 'Admin\InvoiceCrudController');
     CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
     CRUD::resource('purchase', 'Admin\PurchaseCrudController');
     CRUD::resource('items', 'Admin\CheckListCrudController');

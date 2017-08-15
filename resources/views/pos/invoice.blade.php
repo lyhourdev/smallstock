@@ -2,9 +2,9 @@
     <div class="col-md-6">
         <?php
         $field = [   // date_picker
-            'name' => 'purchase_number',
+            'name' => 'invoice_number',
             'type' => 'text',
-            'label' => 'Purchase Number',
+            'label' => 'Invoice Number',
             'oneTime' => 0,
             // optional:
         ];
@@ -16,7 +16,7 @@
         $field = [
             'name' => '_date_',
             'type' => 'date_picker',
-            'label' => 'Purchase Date',
+            'label' => 'Invoice Date',
             'oneTime' => 1,
         ];
         ?>
@@ -45,9 +45,35 @@
     <div class="col-md-6">
         <?php
         $field = [
-            'name' => 'ref',
+            'name' => 'deposit',
             'type' => 'text',
-            'label' => 'Purchase Reference',
+            'label' => 'Deposit',
+            'oneTime' => 0,
+        ];
+        ?>
+        @include('vendor.backpack.crud.customs.text2',compact('crud', 'entry', 'field'))
+    </div>
+</div>
+
+<div class="col-md-12">
+
+    <div class="col-md-6">
+        <?php
+        $field = [
+            'name' => 'complete_date',
+            'type' => 'date_picker',
+            'label' => 'Complete Date',
+            'oneTime' => 0,
+        ];
+        ?>
+        @include('vendor.backpack.crud.customs.date_picker2',compact('crud', 'entry', 'field'))
+    </div>
+    <div class="col-md-6">
+        <?php
+        $field = [
+            'name' => 'complete_price',
+            'type' => 'text',
+            'label' => 'Complete Price',
             'oneTime' => 0,
         ];
         ?>

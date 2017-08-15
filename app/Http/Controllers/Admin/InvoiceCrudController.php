@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\OpenItemsDetailRequest as StoreRequest;
-use App\Http\Requests\OpenItemsDetailRequest as UpdateRequest;
+use App\Http\Requests\InvoiceRequest as StoreRequest;
+use App\Http\Requests\InvoiceRequest as UpdateRequest;
 
-class OpenItemsDetailCrudController extends CrudController
+class InvoiceCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class OpenItemsDetailCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\OpenItemsDetail');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/openitemsdetail');
-        $this->crud->setEntityNameStrings('openitemsdetail', 'open_items_details');
+        $this->crud->setModel('App\Models\Invoice');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/invoices');
+        $this->crud->setEntityNameStrings('invoice', 'invoices');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,7 +28,51 @@ class OpenItemsDetailCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        $this->crud->addColumn([
+            'name' => 'invoice_number',
+            'label' => 'Invoice Number',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => '_date_',
+            'label' => 'Purchase Date',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'customer_id',
+            'label' => 'Customer Purchase',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'description',
+            'label' => 'Description',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'deposit',
+            'label' => 'Deposit',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'status',
+            'label' => 'Status',
+        ]);
+
+
+        $this->crud->addField([
+            'name' => 'invoice',
+            'type' => 'view',
+            'view' => 'pos.invoice'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'item',
+            'label' => 'Item',
+            'type' => 'items',
+            'price' => true,
+        ]);
+
+//        $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -102,7 +146,7 @@ class OpenItemsDetailCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::storeCrud();
+        $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
@@ -111,7 +155,7 @@ class OpenItemsDetailCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::updateCrud();
+        $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;

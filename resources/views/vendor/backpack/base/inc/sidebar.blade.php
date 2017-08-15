@@ -71,7 +71,7 @@
                         <span>Sale</span></a>
                 </li>
 
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/invoice') }}">
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/invoices') }}">
                         <i class="fa fa-fw fa-file-excel-o"></i>
                         <span>Invoice</span>
                     </a>

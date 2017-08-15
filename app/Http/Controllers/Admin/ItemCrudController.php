@@ -58,18 +58,10 @@ class ItemCrudController extends CrudController
             'label' => 'Image',
         ]);
 
-
         $this->crud->addField([
-            'name' => 'category_id',
-            'label' => 'Item',
-            'type' => 'item_',
-            'price' => true,
-        ]);
-
-        $this->crud->addField([
-            'name' => 'description',
-            'label' => 'description',
-            'type' => 'textarea',
+            'name' => 'purchase',
+            'type' => 'view',
+            'view' => 'pos.item'
         ]);
 
         $this->crud->addField([ // image
@@ -82,12 +74,6 @@ class ItemCrudController extends CrudController
             // 'prefix' => 'uploads/images/profile_pictures/' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 
-        $this->crud->addField([
-            'name' => 'item',
-            'label' => 'Item',
-            'type' => 'items',
-            'price' => true,
-        ]);
 
 //        $this->crud->setFromDb();
 
