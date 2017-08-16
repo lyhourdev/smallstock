@@ -124,6 +124,9 @@
     <script src="{{ asset('vendor/adminlte') }}/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/plugins/fastclick/fastclick.js"></script>
     <script src="{{ asset('vendor/adminlte') }}/dist/js/app.min.js"></script>
+    <script>
+        $(".col-md-8").attr('class', 'col-md-12');
+    </script>
 
     @section('graph_script')
     @show

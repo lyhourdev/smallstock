@@ -14,14 +14,18 @@ class OpenItems extends Model
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
-
     protected $table = 'open_items';
     protected $primaryKey = 'id';
      public $timestamps = true;
     // protected $guarded = ['id'];
-     protected $fillable = ['open_number','open_date','description','user_id'];
+     protected $fillable = ['open_number','_date_','description','user_id'];
     // protected $hidden = [];
     // protected $dates = [];
+
+    public function setData_itemAttribute($value)
+    {
+        dd($value);
+    }
 
     /*
     |--------------------------------------------------------------------------

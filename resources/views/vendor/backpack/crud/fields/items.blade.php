@@ -3,8 +3,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Item Table</h3>
-
+                    <h3 class="box-title">Item Table</h3>>
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 80px;">
                             {{--<a hidden="#" class="btn btn-block btn-primary btn-sm" id="btn-add-new">Add New</a>--}}
@@ -39,6 +38,7 @@
     @push('crud_fields_scripts')
         <!-- include select2 js-->
         <script src="{{ asset('vendor/adminlte/plugins/select2/select2.min.js') }}"></script>
+        <script src="{{ asset('vendor/adminlte/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
         <script>
              var name__ = "{{$field['name']}}";
 
@@ -79,10 +79,16 @@
                 var html = '<tr>\n' +
                     //                    '                            <td style="width: 20px;">'+detID_+'</td>\n' +
                     '                            <td>\n' +
-                    '                                <select name="data_'+name__+'['+i1+'][item_id]" style="width: 100%"\n' +
-                    '                                        class="form-control select2_field">\n' +
-                    '                                   <option value="0"></option>' +
-                    '                                </select>\n' +
+                    '                                <input name="data_'+name__+'['+i1+'][item_id]" style="width: 100%"\n' +
+                    '                                        class="form-control item_id">\n' +
+//                    '                                   <option value="0"></option>' +
+//                    '                                </select>\n' +
+                    '                            </td>\n' +
+                    '                            <td>\n' +
+                    '                                <input name="data_'+name__+'['+i1+'][item_title]" style="width: 100%"\n' +
+                    '                                        class="form-control item_title">\n' +
+//                    '                                   <option value="0"></option>' +
+//                    '                                </select>\n' +
                     '                            </td>\n' +
                     '                            <td style="width: 80px;">\n' +
                     '                                <input type="text" name="data_'+name__+'['+i1+'][unit]" value="" class="form-control">\n' +
@@ -112,12 +118,18 @@
                var i4 = getRNum();
                var html = '<tr>\n' +
                     //                    '                            <td style="width: 20px;">'+detID_+'</td>\n' +
-                    '                            <td>\n' +
-                    '                                <select name="data_'+name__+'['+i1+'][option]['+i3+'][item_id]" style="width: 100%"\n' +
-                    '                                        class="form-control select2_field">\n' +
-                    '                                   <option value="0"></option>' +
-                    '                                </select>\n' +
-                    '                            </td>\n' +
+                   '                            <td>\n' +
+                   '                                <input name="data_'+name__+'['+i1+'][item_id]" style="width: 100%"\n' +
+                   '                                        class="form-control item_id">\n' +
+                   //                    '                                   <option value="0"></option>' +
+                   //                    '                                </select>\n' +
+                   '                            </td>\n' +
+                   '                            <td>\n' +
+                   '                                <input name="data_'+name__+'['+i1+'][item_title]" style="width: 100%"\n' +
+                   '                                        class="form-control item_title">\n' +
+                   //                    '                                   <option value="0"></option>' +
+                   //                    '                                </select>\n' +
+                   '                            </td>\n' +
                     '                            <td style="width: 80px;">\n' +
                     '                                <input type="text" name="data_'+name__+'['+i1+'][option]['+i3+'][unit]" value="" class="form-control">\n' +
                     '                            </td>\n' +
@@ -147,6 +159,7 @@
                     '                                                        <tr>\n' +
                     //                    '                                                            <th>ID</th>\n' +
                     '                                                            <th>Item</th>\n' +
+                    '                                                            <th>Name</th>\n' +
                     '                                                            <th>Unit</th>\n' +
                     '                                                            <th>Qty</th>\n' +
                     <?php if ($field['price'] == true){ ?>
@@ -198,6 +211,8 @@
                             '                                                        <tr>\n' +
                             //                    '                                                            <th>ID</th>\n' +
                             '                                                            <th>Item</th>\n' +
+                            '                                                            <th>Name</th>\n' +
+
                             '                                                            <th>Unit</th>\n' +
                             '                                                            <th>Qty</th>\n' +
                             <?php if ($field['price'] == true){ ?>
@@ -234,7 +249,22 @@
                 });
             });
 
-
+             $('body').delegate('.item_id','click',function (e) {
+                 $(this).autocomplete({
+                     source: function( request, response ) {
+                         $.ajax({
+                             url: "http://gd.geobytes.com/AutoCompleteCity",
+                             dataType: "jsonp",
+                             data: {
+                                 q: request.term
+                             },
+                             success: function( data ) {
+                                 response( data );
+                             }
+                         });
+                     }
+                 });
+             });
 
         </script>
     @endpush

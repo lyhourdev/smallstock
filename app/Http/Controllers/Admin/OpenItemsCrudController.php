@@ -91,6 +91,12 @@ class OpenItemsCrudController extends CrudController
             'view' => 'test',
         ]);
 
+        $this->crud->addField([
+            'name' => 'custom-ajax-button',
+            'type' => 'view',
+            'view' => 'open_item/open_item',
+        ]);
+
 //        $this->crud->addField([
 //            'name' => 'open_number',
 //            'label' => 'Open Number',
@@ -236,15 +242,35 @@ class OpenItemsCrudController extends CrudController
         // $this->crud->limit();
     }
 
+
+
     public function store(StoreRequest $request)
     {
+//        dd($this->crud->request->request);
 //        dd($request->item);
-        $this->crud->request->request->add(['user_id'=>getUserID()]);
+//        $this->crud->request->request->add(['user_id'=>getUserID()]);
         // your additional operations before save here
         $redirect_location = parent::storeCrud();
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+    }
+
+    public function edit($id)
+    {
+
+        $this->crud->hasAccessOrFail('update');
+
+        // get the info for that entry
+        $this->data['entry'] = $this->crud->getEntry($id);
+        $this->data['crud'] = $this->crud;
+        $this->data['saveAction'] = $this->getSaveAction();
+        $this->data['fields'] = $this->crud->getUpdateFields($id);
+        $this->data['title'] = trans('backpack::crud.edit').' '.$this->crud->entity_name;
+        $this->data['id'] = $id;
+
+        // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
+        return view($this->crud->getEditView(), $this->data);
     }
 
     public function update(UpdateRequest $request)
