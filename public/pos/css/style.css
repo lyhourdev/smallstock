@@ -11,13 +11,13 @@
     clear: both;
 }
 #left-panel{
-    width: 33.9%;
+    width: 39.9%;
     height:722px;
     background-color: #d2d6de;
     float: left;
 }
 #right-section{
-    width: 66%;
+    width: 60%;
     height: 722px;
     background-color: #bcbec0;
     float: right;
@@ -179,7 +179,7 @@ padding: 1px !important;
 .table-show-pro{
     width:100%;
     overflow:auto;
-    /*max-height:648px;*/
+    height:400px;
     max-height:400px;
     text-align: center;
     border-bottom: 1px solid #DDD;

@@ -47,7 +47,7 @@ class PurchaseCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'ref',
-            'label' => 'Ref',
+            'label' => 'Reference',
         ]);
 
         $this->crud->addColumn([
