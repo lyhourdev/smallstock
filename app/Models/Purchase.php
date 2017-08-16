@@ -19,9 +19,29 @@ class Purchase extends Model
     protected $primaryKey = 'id';
      public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['purchase_number','_date_','customer_id','ref','description','user_id'];
+     protected $fillable = ['purchase_number','_date_','customer_id','ref','description'];
     // protected $hidden = [];
     // protected $dates = [];
+
+    protected $attributes = [
+        'data' => [],
+    ];
+
+    public function getDataAttribute() {
+        $data = [
+            'id' => $this->id,
+            'purchase_number' => $this->purchase_number,
+            '_date_' => $this->_date_,
+            'customer_id' => $this->customer_id,
+            'ref' => $this->ref,
+            'description' => $this->description,
+        ];
+        return $data;
+    }
+
+    public function setDataAttribute($value) {
+        $this->attributes['data'] = $value;
+    }
 
 
     public function customer()
