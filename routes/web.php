@@ -92,6 +92,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     CRUD::resource('invoices', 'Admin\InvoiceCrudController');
     CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
     CRUD::resource('purchase', 'Admin\PurchaseCrudController');
+    CRUD::resource('production', 'Admin\ProductionCrudController');
     CRUD::resource('items', 'Admin\ItemCrudController');
     CRUD::resource('checklist', 'Admin\CheckListCrudController');
 

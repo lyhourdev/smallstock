@@ -2,55 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Customers;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\CustomersRequest as StoreRequest;
-use App\Http\Requests\CustomersRequest as UpdateRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductionRequest as StoreRequest;
+use App\Http\Requests\ProductionRequest as UpdateRequest;
 
-//use Illuminate\Support\Facades\Request;
-
-class CustomersCrudController extends CrudController
+class ProductionCrudController extends CrudController
 {
-
-
-    public function index2(Request $request)
-    {
-        $search_term = $request->input('q');
-        $page = $request->input('page');
-
-        if ($search_term)
-        {
-            $results = Customers::where('name', 'LIKE', '%'.$search_term.'%')->paginate(10);
-        }
-        else
-        {
-            $results = Customers::paginate(10);
-        }
-
-        return $results;
-    }
-
-    public function show2($id)
-        {
-            return Customers::find($id);
-        }
-
-
-    public function getPhones() {
-        $term = $this->request->input('term');
-        $options = Customers::where('phone', 'like', '%'.$term.'%')->get();
-        return $options->pluck('phone', 'phone');
-    }
-
-    public function getName() {
-        $term = $this->request->input('term');
-        $options = Customers::where('name', 'like', '%'.$term.'%')->get();
-        return $options->pluck('name', 'name');
-    }
-
     public function setup()
     {
 
@@ -59,9 +18,9 @@ class CustomersCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Customers');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/customers');
-        $this->crud->setEntityNameStrings('Customers', 'Customer');
+        $this->crud->setModel('App\Models\Production');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/production');
+        $this->crud->setEntityNameStrings('production', 'productions');
 
         /*
         |--------------------------------------------------------------------------
@@ -70,18 +29,23 @@ class CustomersCrudController extends CrudController
         */
 
         $this->crud->addColumn([
-            'name' => 'name',
-            'label' => 'Name',
+            'name' => 'production_number',
+            'label' => 'Production Number',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'gender',
-            'label' => 'Gender',
+            'name' => '_date_',
+            'label' => 'Production Date',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'phone',
-            'label' => 'Phone',
+            'name' => 'customer_id',
+            'label' => 'Customer Production',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'ref',
+            'label' => 'Reference',
         ]);
 
         $this->crud->addColumn([
@@ -89,84 +53,19 @@ class CustomersCrudController extends CrudController
             'label' => 'Description',
         ]);
 
-        $this->crud->addColumn([
-            'name' => 'created_at',
-            'label' => 'Created At',
+
+        $this->crud->addField([
+            'name' => 'production',
+            'type' => 'view',
+            'view' => 'pos.production'
         ]);
 
         $this->crud->addField([
-            'name' => 'name',
-            'label' => 'Name',
+            'name' => 'item',
+            'label' => 'Item',
+            'type' => 'items',
+            'price' => true,
         ]);
-
-        $this->crud->addField([
-            // select_from_array
-            'name' => 'gender',
-            'label' => "Gender",
-            'type' => 'select2_from_array',
-            'options' => ['Male' => 'Male', 'Female' => 'Female'],
-            'allows_null' => false,
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
-
-        $this->crud->addField([
-            'name' => 'phone',
-            'label' => 'Phone',
-            'type' => 'text',
-        ]);
-
-        $this->crud->addField([
-            'name' => 'description',
-            'label' => 'Description',
-            'type' => 'textarea',
-        ]);
-
-        $this->crud->addFilter([ // select2_ajax filter
-            'name' => 'name',
-            'type' => 'select2_ajax',
-            'label'=> 'Name',
-            'placeholder' => 'Pick a Name'
-        ],
-            url('admin/ajax-customer-name'), // the ajax route
-            function($value) { // if the filter is active
-                $this->crud->addClause('where', 'name', $value);
-            });
-
-        $this->crud->addFilter([ // select2_ajax filter
-            'name' => 'phone',
-            'type' => 'select2_ajax',
-            'label'=> 'Phone',
-            'placeholder' => 'Pick a Phone'
-        ],
-            url('admin/ajax-customer-phone'), // the ajax route
-            function($value) { // if the filter is active
-                 $this->crud->addClause('where', 'phone', $value);
-            });
-
-        $this->crud->addFilter([ // dropdown filter
-            'name' => 'gender',
-            'type' => 'dropdown',
-            'label'=> 'Gender'
-        ], [
-            'Male' => 'Male',
-            'Female' => 'Female'
-        ], function($value) { // if the filter is active
-             $this->crud->addClause('where', 'gender', $value);
-        });
-
-        $this->crud->addFilter([ // daterange filter
-            'type' => 'date_range',
-            'name' => 'created_at',
-            'label'=> 'Created At'
-        ],
-            false,
-            function($value) { // if the filter is active, apply these constraints
-                 $dates = json_decode($value);
-                 $this->crud->addClause('where', 'created_at', '>=', $dates->from);
-                 $this->crud->addClause('where', 'created_at', '<=', $dates->to);
-            });
-
-
 //        $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
@@ -220,7 +119,7 @@ class CustomersCrudController extends CrudController
         // ------ DATATABLE EXPORT BUTTONS
         // Show export to PDF, CSV, XLS and Print buttons on the table view.
         // Does not work well with AJAX datatables.
-         $this->crud->enableExportButtons();
+        // $this->crud->enableExportButtons();
 
         // ------ ADVANCED QUERIES
         // $this->crud->addClause('active');
@@ -241,7 +140,7 @@ class CustomersCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::storeCrud();
+        $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
@@ -250,7 +149,7 @@ class CustomersCrudController extends CrudController
     public function update(UpdateRequest $request)
     {
         // your additional operations before save here
-        $redirect_location = parent::updateCrud();
+        $redirect_location = parent::updateCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;

@@ -66,7 +66,7 @@
                         <span>Purchase</span>
                     </a>
                 </li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/purchase') }}">
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/production') }}">
                         <i class="fa fa-fw fa-gavel"></i>
                         <span>Production</span>
                     </a>

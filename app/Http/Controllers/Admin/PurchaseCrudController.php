@@ -39,15 +39,18 @@ class PurchaseCrudController extends CrudController
             'name' => '_date_',
             'label' => 'Purchase Date',
         ]);
-
         $this->crud->addColumn([
-            'name' => 'customer_id',
             'label' => 'Customer Purchase',
+            'type' => 'select',
+            'name' => 'customer_id',
+            'entity' => 'customer',
+            'attribute' => 'name',
+            'model' => "App\Models\Customers",
         ]);
 
         $this->crud->addColumn([
             'name' => 'ref',
-            'label' => 'Ref',
+            'label' => 'Reference',
         ]);
 
         $this->crud->addColumn([
@@ -55,10 +58,9 @@ class PurchaseCrudController extends CrudController
             'label' => 'Description',
         ]);
 
-
         $this->crud->addField([
-            'name' => 'purchase',
-            'type' => 'view',
+            'name' => 'data',
+            'type' => 'view2',
             'view' => 'pos.purchase'
         ]);
 
@@ -143,11 +145,11 @@ class PurchaseCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         //dd($request->data_item);
-        $x = StaticHelper::getDataDetailOption($request->data_item);
+//        $x = StaticHelper::getDataDetailOption($request->data_item);
 
 
 
-        $this->crud->request->request->add(['user_id'=>getUserID()]);
+//        $this->crud->request->request->add(['user_id'=>getUserID()]);
 
         // your additional operations before save here
         $redirect_location = parent::storeCrud();

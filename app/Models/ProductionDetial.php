@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class PurchaseDetail extends Model
+class ProductionDetial extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class PurchaseDetail extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'purchase_detail';
+    protected $table = 'production_detial';
     protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

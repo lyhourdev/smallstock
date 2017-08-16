@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class PurchaseDetail extends Model
+class Production extends Model
 {
     use CrudTrait;
 
@@ -15,14 +15,17 @@ class PurchaseDetail extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'purchase_detail';
+    protected $table = 'production';
     protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = [];
+     protected $fillable = ['production_number','_date_','customer_id','ref','description','user_id'];
     // protected $hidden = [];
     // protected $dates = [];
-
+    public function customer()
+    {
+        return $this->belongsTo('App\Models\Customers', 'customer_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
