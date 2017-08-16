@@ -76,17 +76,13 @@ class OpenItemsCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'label' => _t('User'),
+            'label' => 'User',
             'type' => 'select',
             'name' => 'user_id',
             'entity' => 'userTitle',
             'attribute' => 'name',
             'model' => "App\Models\User",
         ]);
-
-
-
-
 
         $this->crud->addField([
             'name' => 'test',

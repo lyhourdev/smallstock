@@ -30,10 +30,9 @@
                         <i class="fa fa-files-o"></i>
                         <span>File manager</span></a>
                 </li>
-
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/customers') }}">
-                        <i class="fa  fa-user"></i>
-                        <span>Customer</span></a>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/sale') }}">
+                        <i class="fa fa-fw fa-desktop"></i>
+                        <span>POS</span></a>
                 </li>
                 <li class="treeview">
                     <a href="#">
@@ -56,19 +55,21 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/purchase') }}">
-                        <i class="fa fa-fw fa-cart-arrow-down"></i>
-                        <span>Purchase</span>
-                    </a>
-                </li>
+
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/open-items') }}">
                         <i class="fa fa-fw fa-book"></i>
                         <span>Open Item</span>
                     </a>
                 </li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/sale') }}">
-                        <i class="fa fa-fw fa-desktop"></i>
-                        <span>Sale</span></a>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/purchase') }}">
+                        <i class="fa fa-fw fa-cart-arrow-down"></i>
+                        <span>Purchase</span>
+                    </a>
+                </li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/purchase') }}">
+                        <i class="fa fa-fw fa-gavel"></i>
+                        <span>Production</span>
+                    </a>
                 </li>
 
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/invoices') }}">
@@ -85,6 +86,10 @@
                         <i class="fa fa-fw fa-check-square"></i>
                         <span>List Count Stock</span>
                     </a>
+                </li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/customers') }}">
+                        <i class="fa  fa-user"></i>
+                        <span>Customer</span></a>
                 </li>
                 <!-- ======================================= -->
                 <li class="header">{{ trans('backpack::base.user') }}</li>

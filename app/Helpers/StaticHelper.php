@@ -5,10 +5,7 @@
  * Date: 11/7/17
  * Time: 9:08 AM
  */
-
 namespace App\Helpers;
-
-
 use App\Models\ItemDetailOption;
 
 class StaticHelper
@@ -91,5 +88,4 @@ class StaticHelper
         return new DataDetailOptionR($items,$total_qty,$total_amount);
 
     }
-
 }

@@ -11,12 +11,17 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
+    Route::get('/test', function () {
+        return view('test');
+    });
+
     Route::get('home', function () {
         return view('pos.home');
     });
@@ -77,22 +82,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 
     // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('item-category', 'Admin\ItemCategoryCrudController');
-
-
     CRUD::resource('customers', 'Admin\CustomersCrudController');
-
-
     Route::get('api/customer', 'Admin\CustomersCrudController@index2');
     Route::get('api/customer/{id}', 'Admin\CustomersCrudController@show2');
-    Route::get('api/category', 'Admin\CategoriesCrudController@index2');
-    Route::get('api/category/{id}', 'Admin\CategoriesCrudController@show2');
+    Route::get('api/item-category', 'Admin\ItemCategoryCrudController@index2');
+    Route::get('api/item-category/{id}', 'Admin\ItemCategoryCrudController@show2');
 
 
     CRUD::resource('invoices', 'Admin\InvoiceCrudController');
     CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
     CRUD::resource('purchase', 'Admin\PurchaseCrudController');
-    CRUD::resource('items', 'Admin\CheckListCrudController');
-    CRUD::resource('checklist', 'Admin\ItemCrudController');
+    CRUD::resource('items', 'Admin\ItemCrudController');
+    CRUD::resource('checklist', 'Admin\CheckListCrudController');
 
     // [...] other routes
 

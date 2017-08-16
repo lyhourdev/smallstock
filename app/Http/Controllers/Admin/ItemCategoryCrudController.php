@@ -2,14 +2,38 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\ItemCategory;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\ItemCategoryRequest as StoreRequest;
 use App\Http\Requests\ItemCategoryRequest as UpdateRequest;
+use Illuminate\Http\Request;
 
 class ItemCategoryCrudController extends CrudController
 {
+    public function index2(Request $request)
+    {
+        $search_term = $request->input('q');
+        $page = $request->input('page');
+
+        if ($search_term)
+        {
+            $results = ItemCategory::where('name', 'LIKE', '%'.$search_term.'%')->paginate(10);
+        }
+        else
+        {
+            $results = ItemCategory::paginate(10);
+        }
+
+        return $results;
+    }
+
+    public function show2($id)
+    {
+        return ItemCategory::find($id);
+    }
+
     public function setup()
     {
 
@@ -34,7 +58,7 @@ class ItemCategoryCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'label' => _t('Category'),
+            'label' => 'Category',
             'type' => 'select',
             'name' => 'parent_id',
             'entity' => 'parent',
@@ -44,7 +68,7 @@ class ItemCategoryCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'description',
-            'label' => _t('Description'),
+            'label' => 'Description',
         ]);
 
         $this->crud->addColumn([
@@ -53,7 +77,7 @@ class ItemCategoryCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'label' => _t('Parent'),
+            'label' => 'Parent',
             'type' => 'select',
             'name' => 'parent_id',
             'entity' => 'category',
@@ -64,7 +88,7 @@ class ItemCategoryCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'title',
-            'label' => _t('Title'),
+            'label' => 'Title',
             'type' => 'text',
             'placeholder' => 'Your title here',
             'tab' => 'English'
@@ -72,7 +96,7 @@ class ItemCategoryCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'description',
-            'label' => _t('Description'),
+            'label' => 'Description',
             'type' => 'text',
             'placeholder' => 'Your title here',
             'tab' => 'English'
@@ -81,7 +105,7 @@ class ItemCategoryCrudController extends CrudController
         $this->crud->addField([
             // Enum
             'name' => 'status',
-            'label' => _t('Status'),
+            'label' => 'Status',
             'type' => 'enum',
             'tab' => 'English'
         ]);

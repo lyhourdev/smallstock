@@ -553,7 +553,8 @@
                 <div class="col-md-12 col-sm-12 checkout_amount">
                     <div id="left-bottom">
                         <table id="totalTable" style="width:100%; float:right; padding:5px; color:#000; background: #FFF;">
-                            <tbody><tr>
+                            <tbody>
+                            <tr>
                                 <td style="padding: 5px 10px; font-size: 16px;">Items <span style="padding: 5px 10px; font-size: 16px; font-weight:bold;" id="titems">4 (4)</span></td>
                                 <td class="text-right">
                                     Rate <span style="padding: 5px 10px;font-size: 16px; font-weight:bold;" id="khmer_rate">4,200  ៛</span>
@@ -786,7 +787,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
                         <div class="padding-around">
                             {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
-                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
+                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item1.jpg')}}" alt="...">
                             <div class="name-style  open-button" >item name one</div>
                             <div class="id-style  open-button"><b><span>$</span> 1000</b></div>
                             <div class="id-style  open-button"><b><span>ID:</span> P00001</b></div>
@@ -795,7 +796,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
                         <div class="padding-around">
                             {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
-                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
+                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item2.jpg')}}" alt="...">
                             <div class="name-style  open-button2" >item name two</div>
                             <div class="id-style  open-button2"><b><span>$</span> 1000</b></div>
                             <div class="id-style  open-button2"><b><span>ID:</span> P00001</b></div>

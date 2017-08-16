@@ -22,10 +22,17 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+//    public function register()
+//    {
+//        foreach (glob(app_path().'/Helpers/*.php') as $filename){
+//            require_once($filename);
+//        }
+//    }
     public function register()
     {
-        foreach (glob(app_path().'/Helpers/*.php') as $filename){
-            require_once($filename);
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
         }
+        // ...
     }
 }

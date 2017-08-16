@@ -69,7 +69,7 @@
             </a>
         </li>
         <li class=" hidden-xs" style="background-color: #14806c;">
-            <a href="#">
+            <a href="{{url('/admin/register')}}">
                 <i class="fa fa-th-large"> Register</i>
 
             </a>

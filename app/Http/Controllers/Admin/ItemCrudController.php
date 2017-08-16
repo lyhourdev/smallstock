@@ -27,12 +27,14 @@ class ItemCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-
         $this->crud->addColumn([
-            'name' => 'category_id',
             'label' => 'Item Category',
+            'type' => 'select',
+            'name' => 'category_id',
+            'entity' => 'item_category',
+            'attribute' => 'title',
+            'model' => "App\Models\ItemCategory",
         ]);
-
         $this->crud->addColumn([
             'name' => 'item_code',
             'label' => 'Item Code',
@@ -52,28 +54,33 @@ class ItemCrudController extends CrudController
             'name' => 'description',
             'label' => 'Description',
         ]);
-
         $this->crud->addColumn([
             'name' => 'image',
-            'label' => 'Image',
+            'type' => 'image',
+            'attributes' => [ // Optional (style by default is height: 48px;)
+                'alt' => 'User avatar',
+                'class' => 'img_rounded',
+                'style' => 'width: 50px; height: 50px'
+            ],
+            'link' => True // Optional, this define if the image should have a link to be opened in new tab (default) or not
         ]);
 
         $this->crud->addField([
-            'name' => 'purchase',
+            'name' => 'item',
             'type' => 'view',
             'view' => 'pos.item'
         ]);
 
         $this->crud->addField([ // image
+            'default' => asset('no-image.png'),
             'label' => "Image",
             'name' => "image",
-            'type' => 'image',
+            'type' => 'image2',
             'upload' => true,
             'crop' => true, // set to true to allow cropping, false to disable
             'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
             // 'prefix' => 'uploads/images/profile_pictures/' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
-
 
 //        $this->crud->setFromDb();
 
@@ -148,6 +155,7 @@ class ItemCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
+
         // your additional operations before save here
         $redirect_location = parent::storeCrud();
         // your additional operations after save here
