@@ -5,9 +5,8 @@
         <!-- =================================================== -->
 
          <li>
-             <a href="{{ url('/admin/dashboard') }}"  style="background-color: blueviolet">
-                 <i class="fa fa-home"></i>
-                 <span>Home</span></a>
+             <a href="{{ url('/admin/dashboard') }}"  style="background-color: blueviolet; font-size: 20px;">
+                 <i class="fa fa-home"></i></a>
          </li>
 
         <!-- ========== End of top menu left items ========== -->
@@ -19,18 +18,12 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
 
-        <li class=" hidden-xs" style="background-color: #4a8009;">
-            <a href="{{ url('/admin/dashboard') }}">
-                <i class="fa fa-dashboard"> Dashboard</i>
+        {{--<li class=" hidden-xs" style="background-color: #4a8009;">--}}
+            {{--<a href="{{ url('/admin/dashboard') }}">--}}
+                {{--<i class="fa fa-dashboard"> Dashboard</i>--}}
 
-            </a>
-        </li>
-        <li class=" hidden-xs" style="background-color: #4a8009;">
-            <a href="{{ url('/admin/elfinder') }}" >
-                <i class="fa fa-gears"> Setting</i>
-
-            </a>
-        </li>
+            {{--</a>--}}
+        {{--</li>--}}
         <li class=" hidden-xs" style="background-color: #328005;">
             <a href="{{ url('/admin/customers') }}" >
                 <i class="fa  fa-user"> Customer</i>
@@ -40,13 +33,6 @@
         <li class=" hidden-xs" style="background-color: #328005;">
             <a href="{{ url('/admin/purchase') }}">
                 <i class="fa fa-cart-arrow-down"> Purchase</i>
-
-            </a>
-        </li>
-
-        <li class=" hidden-xs" style="background-color: #13803a;">
-            <a href="{{ url('/admin/checklist') }}">
-                <i class="fa fa-check-square"> Check List</i>
 
             </a>
         </li>
@@ -68,18 +54,12 @@
 
             </a>
         </li>
-        <li class=" hidden-xs" style="background-color: #14806c;">
-            <a href="{{url('/admin/register')}}">
-                <i class="fa fa-th-large"> Register</i>
-
-            </a>
-        </li>
       <!-- ========================================================= -->
       <!-- ========== Top menu right items (ordered left) ========== -->
       <!-- ========================================================= -->
         <li class="dropdown hidden-xs" style="background-color: #137d80;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-language"> Language</i>
+                <i class="fa fa-language"> English</i>
             </a>
             <ul class="dropdown-menu" style=" height: 50px; !important;">
                 <li>

@@ -1,6 +1,5 @@
 <div class="row">
-
-    <div class="col-lg-6">
+    <div class="col-md-6">
             @include('open_item.fields.my_text',array('field' =>[
                                                     'name' => 'open_number',
                                                     'label' => 'Open Number',
@@ -10,7 +9,7 @@
         <!-- /input-group -->
     </div>
     <!-- /.col-lg-6 -->
-    <div class="col-lg-6">
+    <div class="col-md-6">
             @include('open_item.fields.my_date_picker',array('field' =>[   // date_picker
            'name' => '_date_',
            'type' => 'date_picker',

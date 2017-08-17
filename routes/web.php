@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
         return view('pos.invoice.p_invoice');
     });
 
-    Route::get('invoice-a', function () {
+    Route::get('invoice', function () {
         return view('pos.invoice.invoice');
     });
     Route::get('invoice-print', function () {

@@ -39,8 +39,12 @@ class ProductionCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'customer_id',
             'label' => 'Customer Production',
+            'type' => 'select',
+            'name' => 'customer_id',
+            'entity' => 'customer',
+            'attribute' => 'name',
+            'model' => "App\Models\Customers",
         ]);
 
         $this->crud->addColumn([
@@ -55,8 +59,8 @@ class ProductionCrudController extends CrudController
 
 
         $this->crud->addField([
-            'name' => 'production',
-            'type' => 'view',
+            'name' => 'data',
+            'type' => 'view2',
             'view' => 'pos.production'
         ]);
 

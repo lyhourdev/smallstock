@@ -25,6 +25,29 @@ class Item extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
+
+    protected $attributes = [
+        'data' => [],
+    ];
+
+    public function getDataAttribute() {
+        $data = [
+            'id' => $this->id,
+            'category_id' => $this->category_id,
+            'item_code' => $this->item_code,
+            'title' => $this->title,
+            'description' => $this->description,
+            'unit' => $this->unit,
+        ];
+        return $data;
+    }
+
+    public function setDataAttribute($value) {
+        $this->attributes['data'] = $value;
+    }
+
+
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

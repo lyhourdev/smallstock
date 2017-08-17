@@ -66,7 +66,7 @@ class ItemCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'name' => 'item',
+            'name' => 'data',
             'type' => 'view',
             'view' => 'pos.item'
         ]);

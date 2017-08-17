@@ -39,8 +39,12 @@ class InvoiceCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
+            'label' => 'Customer Name',
+            'type' => 'select',
             'name' => 'customer_id',
-            'label' => 'Customer Purchase',
+            'entity' => 'customer',
+            'attribute' => 'name',
+            'model' => "App\Models\Customers",
         ]);
 
         $this->crud->addColumn([
@@ -52,7 +56,14 @@ class InvoiceCrudController extends CrudController
             'name' => 'deposit',
             'label' => 'Deposit',
         ]);
-
+        $this->crud->addColumn([
+            'name' => 'complete_date',
+            'label' => 'Complete Date',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'complete_price',
+            'label' => 'Complete Price',
+        ]);
         $this->crud->addColumn([
             'name' => 'status',
             'label' => 'Status',
@@ -60,7 +71,7 @@ class InvoiceCrudController extends CrudController
 
 
         $this->crud->addField([
-            'name' => 'invoice',
+            'name' => 'data',
             'type' => 'view',
             'view' => 'pos.invoice'
         ]);

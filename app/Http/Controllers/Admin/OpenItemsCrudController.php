@@ -71,11 +71,6 @@ class OpenItemsCrudController extends CrudController
         ]);
 
         $this->crud->addColumn([
-            'name' => 'user_id',
-            'label' => 'User',
-        ]);
-
-        $this->crud->addColumn([
             'label' => 'User',
             'type' => 'select',
             'name' => 'user_id',
@@ -97,26 +92,11 @@ class OpenItemsCrudController extends CrudController
             'view' => 'open_item/open_item',
         ]);
 
-//        $this->crud->addField([
-//            'name' => 'open_number',
-//            'label' => 'Open Number',
-//            'type' => 'text',
-//        ]);
-//
-//        $this->crud->addField([   // date_picker
-//            'name' => 'open_date',
-//            'type' => 'date_picker',
-//            'label' => 'Open Date',
-//
-//        ]);
-//
         $this->crud->addField([
             'name' => 'description',
             'label' => 'description',
             'type' => 'textarea',
         ]);
-
-
 
         $this->crud->addField([
             'name' => 'item',

@@ -94,7 +94,7 @@
          @yield('header')
 
         <!-- Main content -->
-        <section class="content">
+        <section id="content">
 
           @yield('content')
 

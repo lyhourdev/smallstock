@@ -3,14 +3,14 @@
 //        if (isset($field['value'])){
 //          dd($field['value']['purchase_number']);
 //        }
-
       $purchase_number = isset($field['value']['purchase_number'])?$field['value']['purchase_number']:'';
       $_date_ = isset($field['value']['_date_'])?$field['value']['_date_']:'';
       $customer_id = isset($field['value']['customer_id'])?$field['value']['customer_id']:'';
       $ref = isset($field['value']['ref'])?$field['value']['ref']:'';
       $description = isset($field['value']['description'])?$field['value']['description']:'';
+
 ?>
-<div class="col-md-12">
+<div class="row">
     <div class="col-md-6">
         <?php
         $field = [   // date_picker
@@ -35,14 +35,14 @@
             'date_picker_options' => [
                 'todayBtn' => true,
                 'format' => 'yyyy-mm-dd',
-                'language' => 'fr'
+                'language' => 'en'
             ],
         ];
         ?>
         @include('vendor.backpack.crud.customs.date_picker2',compact('crud', 'entry', 'field'))
     </div>
 </div>
-<div class="col-md-12">
+<div class="row">
     <div class="col-md-6">
         <?php
         $field = [

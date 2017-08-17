@@ -91,6 +91,171 @@
                         <i class="fa  fa-user"></i>
                         <span>Customer</span></a>
                 </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>Reports</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>Chart Report</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                        <span>Overview Chart</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                        <span>Warehouse Stock Chart</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-bar-chart-o"></i>
+                                        <span>Profit Chart</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">
+                                <i class="fa fa-money"></i>
+                                <span>Profit Report</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#">
+                                        <i class="fa fa-money"></i>
+                                        <span>Profit and/or Loss</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">
+                                <i class="fa fa-barcode"></i>
+                                <span>Product Report</span>
+                                    <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Warehouse Product</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Product Monthly</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Inventory In/Out</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Category Value Report</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Product Customer</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Production Report</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-barcode"></i>
+                                        <span>Inventory In/Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">
+                                <i class="fa fa-heart"></i>
+                                <span>Sale Report</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Sale Detail Report</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Sale Profit Report</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Sale Daily</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Sale Monthly</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Sale Discount Report</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-heart"></i>
+                                        <span>Customers Report</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">
+                                <i class="fa fa-star"></i>
+                                <span>Purchase Report</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#">
+                                        <i class="fa fa-star"></i>
+                                        <span>Purchase Daily</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                        <i class="fa fa-star"></i>
+                                        <span>Purchase Monthly</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">
+                                <i class="fa fa-fw fa-gavel"></i>
+                                <span>Production Report</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <!-- ======================================= -->
                 <li class="header">{{ trans('backpack::base.user') }}</li>
                 <li>

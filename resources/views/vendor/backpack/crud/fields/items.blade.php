@@ -1,21 +1,19 @@
 <div class="m-t-10 m-b-10 p-l-10 p-r-10 p-t-10 p-b-10">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Item Table</h3>>
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 80px;">
-                            {{--<a hidden="#" class="btn btn-block btn-primary btn-sm" id="btn-add-new">Add New</a>--}}
-                        </div>
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Item Table</h3>
+                <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 80px;">
+                        {{--<a hidden="#" class="btn btn-block btn-primary btn-sm" id="btn-add-new">Add New</a>--}}
                     </div>
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding" id="all-table">
-                    {{--style="border-left:6px solid #ccc!important; border-color: #2196F3!important; background-color: #ddffff!important;"--}}
-                </div>
-                <!-- /.box-body -->
             </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding" id="all-table">
+                {{--style="border-left:6px solid #ccc!important; border-color: #2196F3!important; background-color: #ddffff!important;"--}}
+            </div>
+            <!-- /.box-body -->
         </div>
     </div>
 </div>

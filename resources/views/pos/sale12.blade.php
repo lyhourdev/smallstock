@@ -3,33 +3,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('pos') }}/css/style.css">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte') }}/plugins/select2/select2.min.css">
-    <style>
-        body {
-            background: #FFF;
-            color: #333;
-            font-weight: normal;
-            width: 100%;
-            min-width: 970px;
-            max-width: 100%;
-            position: relative;
-        }
-        html, body, form {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+
 @endsection
 
 @section('content')
-    <div class="cover-add" id="overlay">
-        <div id="container">
-            <div id="left-panel">
+    <div id="pos">
+        <form>
+            <div id="leftdiv">
                 {{--<img class="profile-user-img img-responsive img-circle" src="{{ asset('vendor/adminlte') }}/dist/img/user4-128x128.jpg" alt="User profile picture">--}}
                 {{--<h3 class="profile-username text-center">Sale Management</h3>--}}
                 <div id="left-top">
-
                     <div class="col-md-12" style="padding-left:0;">
                         <div class="form-group">
                             <div class="input-group">
@@ -107,58 +90,77 @@
                     </div>
                     <div style="clear:both;"></div>
                 </div>
-                <div class="col-md-12 col-sm-12 panel-height" style="position: relative;">
-                    <div class="tbl-header">
-                        <table class="table table-action">
-                            <thead style="width:100%;">
-                            <tr>
-                                <th style="width:15%;">#Code</th>
-                                <th style="width:30%;">Name</th>
-                                <th style="width:10%;">Qty</th>
-                                <th style="width:20%;">Price</th>
-                                <th style="width:20%;">Total</th>
-                                <th style="width: 10%;"></th>
-                            </tr>
-                            </thead>
-                        </table>
+                {{--style="position: relative;"--}}
+                <div id="print">
+                    <div id="left-middle" style="height: 606px; min-height: 325px;">
+                        <div id="product-list" style="height: 601px; min-height: 320px;">
+                            <table class="table items table-striped table-bordered table-condensed table-hover" style="margin-bottom: 0;">
+                                <thead>
+                                <tr>
+                                    <th width="3%">N<sup>o</sup></th>
+                                    <th width="30%">Product</th>
+                                    <th width="10%">Price</th>
+                                    <th width="12%">Price (KHM)</th>
+                                    <th width="10%">Qty</th>
+                                    <th width="5%">Discount</th>
+                                    <th width="13%">Subtotal</th>
+                                    <th style="width: 5%; text-align: center;"><i class="fa fa-trash-o" style="opacity:0.5; filter:alpha(opacity=50);"></i>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span>#1</span>
+                                    </td>
+                                    <td class="edit" style="cursor:pointer;">
+                                        <ul class="enlarges">
+                                            <li>
+                                                <span class="sname" id="name_1502962312176">DESKTOP ASUS</span>
+                                                <span class="showimg" style="width:350px;">
+                                                    {{--<table class="table table-bordered">--}}
+                                                        {{--<tbody>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<th>Image</th>--}}
+                                                        {{--</tr>--}}
+                                                        {{--<tr>--}}
+                                                            {{--<td>--}}
+                                                                {{--<a href="#">--}}
+                                                                    {{--<img src="" alt="DESKTOP ASUS" style="width:200px;" class="img-thumbnail">--}}
+                                                                {{--</a>--}}
+                                                            {{--</td>--}}
+                                                        {{--</tr>--}}
+                                                        {{--</tbody>--}}
+                                                    {{--</table>--}}
+                                                </span>
+                                                <i class="pull-right fa fa-edit tip pointer edit" title="Edit" style="cursor:pointer;"></i>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-right sprice" id="sprice_1502962312176">520.00</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="price-kh">៛ 21,84,000</span>
+                                    </td>
+                                    <td>
+                                        <input class="form-control kb-pad text-center rquantity" name="quantity[]" type="text" value="1" id="quantity_1502962312176" onclick="this.select();">
+                                    </td>
+                                    <td class="text-right">
+                                        <input class="form-control kb-pad text-center sdiscount" type="text" value="0" onclick="this.select();">
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="text-right ssubtotal" id="subtotal_1502962312176">520.00
+                                        </span>
+                                    </td>
+                                    <td class="text-center posdel" style="cursor:pointer;">
+                                        <i class="fa fa-2x fa-times tip pointer posdel" id="1502962312176" title="Remove" style="cursor:pointer;"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="clear:both;"></div>
+                        </div>
                     </div>
-                    <div class="table-show-pro">
-                        <table style="width:100%;">
-                            <tr>
-                                <td style="width:10%;">P0001</td>
-                                <td style="width:30%;" class="name-style-order">Name Item 1</td>
-                                <td style="width:10%;"><input type="text" value="" placeholder=" 0 " style="width: 100%;"></td>
-                                <td style="width:20%;"><span>$</span> 200</td>
-                                <td style="width:20%;"><span>$</span> 200</td>
-                                <td style="width: 10%">
-                                    {{--<a class="btn btn-social-icon btn-facebook">--}}
-                                        {{--<i class="fa  fa-plus"></i>--}}
-                                    {{--</a>--}}
-                                    <a class="" style="font-size: 18px; color: red;">
-                                        <i class="fa fa-fw fa-trash-o"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width:10%;">P0001</td>
-                                <td style="width:30%;" class="name-style-order">Name Item 1</td>
-                                <td style="width:10%;"><input type="text" value="" placeholder=" 0 " style="width: 100%;"></td>
-                                <td style="width:20%;"><span>$</span> 200</td>
-                                <td style="width:20%;"><span>$</span> 200</td>
-                                <td style="width: 10%">
-                                    {{--<a class="btn btn-social-icon btn-facebook">--}}
-                                    {{--<i class="fa  fa-plus"></i>--}}
-                                    {{--</a>--}}
-                                    <a class=" " style="font-size: 18px; color: red;">
-                                        <i class="fa fa-fw fa-trash-o"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-sm-12 checkout_amount">
                     <div id="left-bottom">
                         <table id="totalTable" style="width:100%; float:right; padding:5px; color:#000; background: #FFF;">
                             <tbody>
@@ -243,181 +245,169 @@
                         {{--<div id="icon"></div>--}}
                         {{--</div>--}}
                         {{--<span id="hidesuspend"></span>--}}
-
                     </div>
                 </div>
             </div>
-            <div id="right-section">
-                {{--<div class="col-md-12">--}}
-                    {{--<div class="input-group margin">--}}
-                        {{--<div class="input-group-btn">--}}
-                            {{--<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">All Category &nbsp;&nbsp; <span class="fa fa-caret-down"></span>--}}
-                            {{--</button>--}}
-                            {{--<ul class="dropdown-menu">--}}
-                                {{--<li><a href="#">Rings</a></li>--}}
-                                {{--<li><a href="#">Bracelets</a></li>--}}
-                                {{--<li><a href="#">Necklaces</a></li>--}}
-                                {{--<li><a href="#">Earrings</a></li>--}}
-                                {{--<li><a href="#">Brooches</a></li>--}}
-                                {{--<li><a href="#">Pendents</a></li>--}}
-                                {{--<li><a href="#">Anklets</a></li>--}}
-                                {{--<li><a href="#">Belly Chain</a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                        {{--<input type="text" class="form-control" placeholder="Search product by category/name/code" style="background-color: #ffffff; color: #000000;">--}}
-                        {{--<span class="input-group-btn">--}}
-                        {{--<button type="button" class="btn btn-warning btn-flat"><i class="fa fa-fw fa-search"></i></button>--}}
-                    {{--</span>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                <div class="col-md-12 cat-items-style">
-                    <div id="slider-2" class="slider">
-                        <div class="slider-wrapper">
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-aqua">
-                                        <div class="bg-size">
+            <div id="cp">
+                <div id="cpinner" style="padding:0;">
+                    <div class="quick-menu">
+                        <div id="proContainer">
+                            <div id="ajaxproducts">
+                                <div class="col-md-12 cat-items-style">
+
+                                    <div id="slider-2" class="slider">
+                                        <div class="slider-wrapper">
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-aqua">
+                                                        <div class="bg-size">
                                         <span>
                                             <i><img width="50" height="50" src="{{asset('pos/icon/sale.png')}}"></i>
                                         </span>
-                                            <br>
-                                            <span class="fon-size"><b>Rings</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-green">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Rings</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-green">
+                                                        <div class="bg-size">
                                 <span>
                                     <i><img width="50" height="50" src="{{asset('pos/icon/purchase.png')}}"></i>
                                 </span>
-                                            <br>
-                                            <span class="fon-size"><b>Bracelets</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-aqua">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Bracelets</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-aqua">
+                                                        <div class="bg-size">
                                 <span>
                                     <i><img width="50" height="50" src="{{asset('pos/icon/stock-in.png')}}"></i>
                                 </span>
-                                            <br>
-                                            <span class="fon-size"><b>Necklaces</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-red">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Necklaces</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-red">
+                                                        <div class="bg-size">
                                 <span>
                                     <i><img width="50" height="50" src="{{asset('pos/icon/check.png')}}"></i>
                                 </span>
-                                            <br>
-                                            <span class="fon-size"><b>Earrings</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-green">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Earrings</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-green">
+                                                        <div class="bg-size">
                                 <span>
                                     <i><img width="50" height="50" src="{{asset('pos/icon/customer.png')}}"></i>
                                 </span>
-                                            <br>
-                                            <span class="fon-size"><b>Brooches</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-gray">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Brooches</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-gray">
+                                                        <div class="bg-size">
                                 <span>
                                     <i><img width="50" height="50" src="{{asset('pos/icon/report.png')}}"></i>
                                 </span>
-                                            <br>
-                                            <span class="fon-size"><b>Pendents</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-green">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Pendents</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-green">
+                                                        <div class="bg-size">
                                         <span>
                                             <i><img width="50" height="50" src="{{asset('pos/icon/report.png')}}"></i>
                                         </span>
-                                            <br>
-                                            <span class="fon-size"><b>Anklets</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="cat-padding-around">
-                                    <div class="info-box bg-blue">
-                                        <div class="bg-size">
+                                                            <br>
+                                                            <span class="fon-size"><b>Anklets</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slide">
+                                                <div class="cat-padding-around">
+                                                    <div class="info-box bg-blue">
+                                                        <div class="bg-size">
                                         <span>
                                             <i><img width="50" height="50" src="{{asset('pos/icon/report.png')}}"></i>
                                         </span>
-                                            <br>
-                                            <span class="fon-size"><b>Belly Chain</b></span>
+                                                            <br>
+                                                            <span class="fon-size"><b>Belly Chain</b></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <a href="#" class="slider-button--prev">
+                                            <i class="fa fa-fw fa-chevron-left"></i>
+                                        </a>
+                                        <a href="#" class="slider-button--next">
+                                            <i class="fa fa-fw fa-chevron-right"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div id="item-list" style="height: 834px; min-height: 515px;">
+
+                                    <div id="box-item">
+
+
+                                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
+                                            <div class="padding-around">
+                                                {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
+                                                <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
+                                                <div class="name-style  open-button" >item name one</div>
+                                                <div class="id-style  open-button"><b><span>$</span> 1000</b></div>
+                                                <div class="id-style  open-button"><b><span>ID:</span> P00001</b></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
+                                            <div class="padding-around">
+                                                {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
+                                                <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
+                                                <div class="name-style  open-button2" >item name two</div>
+                                                <div class="id-style  open-button2"><b><span>$</span> 1000</b></div>
+                                                <div class="id-style  open-button2"><b><span>ID:</span> P00001</b></div>
+                                            </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
 
-
                         </div>
-                        <a href="#" class="slider-button--prev">
-                            <i class="fa fa-fw fa-chevron-left"></i>
-                        </a>
-                        <a href="#" class="slider-button--next">
-                            <i class="fa fa-fw fa-chevron-right"></i>
-                        </a>
                     </div>
                 </div>
-                {{--====================items==================--}}
-                <div class="col-md-12 items-style">
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
-                        <div class="padding-around">
-                            {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
-                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
-                            <div class="name-style  open-button" >item name one</div>
-                            <div class="id-style  open-button"><b><span>$</span> 1000</b></div>
-                            <div class="id-style  open-button"><b><span>ID:</span> P00001</b></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 top-item-style">
-                        <div class="padding-around">
-                            {{--<i class="fa fa-fw fa-plus-circle add-pro"></i>--}}
-                            <img class=" open-button img-padding" width="120" height="120" src="{{asset('/pos/img/item3.jpg')}}" alt="...">
-                            <div class="name-style  open-button2" >item name two</div>
-                            <div class="id-style  open-button2"><b><span>$</span> 1000</b></div>
-                            <div class="id-style  open-button2"><b><span>ID:</span> P00001</b></div>
-                        </div>
-                    </div>
-
-                </div>
-                    <div class="col-md-12">
-
-                    </div>
-
-                {{--====================end items==================--}}
             </div>
+        </form>
 
-        </div>
     </div>
 
     <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModal" aria-hidden="true">
@@ -455,29 +445,29 @@
     </div>
 
     {{--<div class="modal fade" id="taxModal" tabindex="-1" role="dialog" aria-labelledby="taxModal" aria-hidden="true">--}}
-        {{--<div class="modal-dialog modal-sm">--}}
-            {{--<div class="modal-content">--}}
-                {{--<div class="modal-header">--}}
-                    {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x">×</i></button>--}}
-                    {{--<h4 class="modal-title" id="txModalLabel">Edit Order Tax</h4>--}}
-                {{--</div>--}}
-                {{--<div class="modal-body">--}}
-                    {{--<div class="form-group">--}}
-                        {{--<label for="order_tax_input">Order Tax</label>--}}
-                        {{--<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">--}}
-                            {{--<option selected="selected">No Tax</option>--}}
-                            {{--<option>VAT @10%</option>--}}
-                            {{--<option>GST @6%</option>--}}
-                            {{--<option>VAT @20%</option>--}}
-                            {{--<option>TAX @10%</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="modal-footer">--}}
-                    {{--<button type="button" id="updateOrderTax" class="btn btn-primary">Update</button>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
+    {{--<div class="modal-dialog modal-sm">--}}
+    {{--<div class="modal-content">--}}
+    {{--<div class="modal-header">--}}
+    {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x">×</i></button>--}}
+    {{--<h4 class="modal-title" id="txModalLabel">Edit Order Tax</h4>--}}
+    {{--</div>--}}
+    {{--<div class="modal-body">--}}
+    {{--<div class="form-group">--}}
+    {{--<label for="order_tax_input">Order Tax</label>--}}
+    {{--<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">--}}
+    {{--<option selected="selected">No Tax</option>--}}
+    {{--<option>VAT @10%</option>--}}
+    {{--<option>GST @6%</option>--}}
+    {{--<option>VAT @20%</option>--}}
+    {{--<option>TAX @10%</option>--}}
+    {{--</select>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--<div class="modal-footer">--}}
+    {{--<button type="button" id="updateOrderTax" class="btn btn-primary">Update</button>--}}
+    {{--</div>--}}
+    {{--</div>--}}
+    {{--</div>--}}
     {{--</div>--}}
 
     <div class="modal fade" id="viewCustomerModal" tabindex="-1" role="dialog" aria-labelledby="viewCustomerModal" aria-hidden="true">
@@ -602,7 +592,7 @@
                                 <div class="form-group person has-feedback">
                                     <label for="name">Name *</label>
                                     <input type="text" name="name" value="" class="form-control tip" id="name">
-                                 </div>
+                                </div>
 
                                 <div class="form-group has-feedback">
                                     <label for="phone">Phone *</label>
@@ -635,7 +625,7 @@
         </div>
     </div>
 
-   <div class="modal fade" id="addProductManual" tabindex="-1" role="dialog" aria-labelledby="addProductManual" aria-hidden="true">
+    <div class="modal fade" id="addProductManual" tabindex="-1" role="dialog" aria-labelledby="addProductManual" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -659,17 +649,17 @@
                             </div>
                         </div>
                         {{--<div class="form-group">--}}
-                            {{--<label for="mtax" class="col-sm-4 control-label">Product Tax *</label>--}}
+                        {{--<label for="mtax" class="col-sm-4 control-label">Product Tax *</label>--}}
 
-                            {{--<div class="col-sm-8">--}}
-                                {{--<select class="form-control">--}}
-                                    {{--<option selected="selected">No Tax</option>--}}
-                                    {{--<option>VAT @10%</option>--}}
-                                    {{--<option>GST @6%</option>--}}
-                                    {{--<option>VAT @20%</option>--}}
-                                    {{--<option>TAX @10%</option>--}}
-                                {{--</select>--}}
-                            {{--</div>--}}
+                        {{--<div class="col-sm-8">--}}
+                        {{--<select class="form-control">--}}
+                        {{--<option selected="selected">No Tax</option>--}}
+                        {{--<option>VAT @10%</option>--}}
+                        {{--<option>GST @6%</option>--}}
+                        {{--<option>VAT @20%</option>--}}
+                        {{--<option>TAX @10%</option>--}}
+                        {{--</select>--}}
+                        {{--</div>--}}
                         {{--</div>--}}
                         <div class="form-group">
                             <label for="mquantity" class="col-sm-4 control-label">Quantity *</label>
@@ -710,115 +700,115 @@
         </div>
     </div>
 
-   <div class="modal fade" id="searchProductFilter" tabindex="-1" role="dialog" aria-labelledby="searchProductFilter" aria-hidden="true">
-       <div class="modal-dialog">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
+    <div class="modal fade" id="searchProductFilter" tabindex="-1" role="dialog" aria-labelledby="searchProductFilter" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
                            <i class="fa fa-2x">×</i></span><span class="sr-only">Close</span>
-                   </button>
-                   <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
-               </div>
-               <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:300px;overflow:hidden;">
-                   <form class="form-horizontal" role="form" id="s_seModal">
-                       <table>
-                           <thead>
-                           <tr>
-                               <td style="padding:0;margin:0;border:1px;">
-                                   <input type="text" style="width:184px;border-right:none" class="form-control ui-autocomplete-input" id="fcode" autocomplete="off"></td>
-                               <td style="padding:0;margin:0;border:1px;">
-                                   <input type="text" style="width:239px;border-right:none" class="form-control ui-autocomplete-input" id="fdescription" autocomplete="off"></td>
-                               <td style="padding:0;margin:0;border:1px;">
-                                   <input type="text" style="width:145px;" class="form-control ui-autocomplete-input" id="ffloor" autocomplete="off"></td>
-                           </tr>
-                           </thead>
-                       </table>
-                       <table class="table table-bordered">
-                           <thead>
-                           <tr>
-                               <th style="width:45px;"></th>
-                               <th>Code</th>
-                               <th>Description</th>
-                               <th>Status</th>
-                               <th>Floor</th>
-                           </tr>
-                           </thead>
-                           <tbody class="floor">
+                    </button>
+                    <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
+                </div>
+                <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:300px;overflow:hidden;">
+                    <form class="form-horizontal" role="form" id="s_seModal">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td style="padding:0;margin:0;border:1px;">
+                                    <input type="text" style="width:184px;border-right:none" class="form-control ui-autocomplete-input" id="fcode" autocomplete="off"></td>
+                                <td style="padding:0;margin:0;border:1px;">
+                                    <input type="text" style="width:239px;border-right:none" class="form-control ui-autocomplete-input" id="fdescription" autocomplete="off"></td>
+                                <td style="padding:0;margin:0;border:1px;">
+                                    <input type="text" style="width:145px;" class="form-control ui-autocomplete-input" id="ffloor" autocomplete="off"></td>
+                            </tr>
+                            </thead>
+                        </table>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="width:45px;"></th>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Floor</th>
+                            </tr>
+                            </thead>
+                            <tbody class="floor">
 
-                           </tbody>
-                       </table>
-                   </form>
-                   <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;">
-                       <div class="ps-scrollbar-x" style="left: -30px; width: 0px;">
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;">
+                        <div class="ps-scrollbar-x" style="left: -30px; width: 0px;">
 
-                       </div>
-                   </div>
-                   <div class="ps-scrollbar-y-rail" style="top: 0px; height: 270px; display: none; right: 3px;">
-                       <div class="ps-scrollbar-y" style="top: 0px; height: 0px;">
+                        </div>
+                    </div>
+                    <div class="ps-scrollbar-y-rail" style="top: 0px; height: 270px; display: none; right: 3px;">
+                        <div class="ps-scrollbar-y" style="top: 0px; height: 0px;">
 
-                       </div>
-                   </div>
-               </div>
-               <div class="modal-footer">
-                   <button type="button" class="btn btn-primary" id="addSearch">Submit</button>
-               </div>
-           </div>
-       </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addSearch">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
 
-   <div class="modal fade" id="searchProductFilterDetail" tabindex="-1" role="dialog" aria-labelledby="searchProductFilterDetail" aria-hidden="true">
-       <div class="modal-dialog modal-lg">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="fa fa-2x">×</i></span><span class="sr-only">Close</span></button>
-                   <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
-               </div>
-               <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:400px;overflow:hidden;">
-                   <form class="form-horizontal" role="form" id="s_seModal">
-                       <table>
-                           <thead>
-                           <tr>
-                               <td style="border:1px;width:5%"><input type="text" class="form-control" id="chk" disabled=""></td>
-                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcode" autocomplete="off"></td>
-                               <td style="padding:0;margin:0;border:1px;width:25%"><input type="text" class="form-control ui-autocomplete-input" id="Pname" autocomplete="off"></td>
-                               <!--<td style="padding:0;margin:0;border:1px;"><input type="text" style="width:113px;border-right:none" class="form-control" id="Pdescription" /></td>-->
-                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcategory" autocomplete="off"></td>
-                               <td style="padding:0;margin:0;border:1px;width:10%"><input type="text" class="form-control ui-autocomplete-input" id="Pprice" autocomplete="off"></td>
-                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control" id="dd" disabled=""></td>
-                           </tr>
-                           </thead>
-                           <tbody>
+    <div class="modal fade" id="searchProductFilterDetail" tabindex="-1" role="dialog" aria-labelledby="searchProductFilterDetail" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="fa fa-2x">×</i></span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
+                </div>
+                <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:400px;overflow:hidden;">
+                    <form class="form-horizontal" role="form" id="s_seModal">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td style="border:1px;width:5%"><input type="text" class="form-control" id="chk" disabled=""></td>
+                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcode" autocomplete="off"></td>
+                                <td style="padding:0;margin:0;border:1px;width:25%"><input type="text" class="form-control ui-autocomplete-input" id="Pname" autocomplete="off"></td>
+                                <!--<td style="padding:0;margin:0;border:1px;"><input type="text" style="width:113px;border-right:none" class="form-control" id="Pdescription" /></td>-->
+                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcategory" autocomplete="off"></td>
+                                <td style="padding:0;margin:0;border:1px;width:10%"><input type="text" class="form-control ui-autocomplete-input" id="Pprice" autocomplete="off"></td>
+                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control" id="dd" disabled=""></td>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                           </tbody>
-                       </table>
-                       <table class="table table-bordered table-striped table-hover">
-                           <thead>
-                           <tr>
-                               <th style="width:5%;">
-                                   <center>
-                                       <input class="checkbox checkth input-xs" type="checkbox" name="check">
-                                   </center>
-                               </th>
-                               <th style="width:20%">Product Code</th>
-                               <th style="width:25%">Product Name</th>
-                               <!--<th style="width:104px">Description</th>-->
-                               <th style="width:20%">Category</th>
-                               <th style="width:10%">Price</th>
-                               <!--<th style="width:200px">strap</th>-->
-                               <th style="width:20px"><i class="fa fa-chain"></i></th>
-                           </tr>
-                           </thead>
-                           <tbody class="test">
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th style="width:5%;">
+                                    <center>
+                                        <input class="checkbox checkth input-xs" type="checkbox" name="check">
+                                    </center>
+                                </th>
+                                <th style="width:20%">Product Code</th>
+                                <th style="width:25%">Product Name</th>
+                                <!--<th style="width:104px">Description</th>-->
+                                <th style="width:20%">Category</th>
+                                <th style="width:10%">Price</th>
+                                <!--<th style="width:200px">strap</th>-->
+                                <th style="width:20px"><i class="fa fa-chain"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody class="test">
 
-                           </tbody>
-                       </table>
-                   </form>
-                   <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: -30px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 370px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
-               <div class="modal-footer">
-                   <button type="button" class="btn btn-primary" id="addItem">Submit</button>
-               </div>
-           </div>
-       </div>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: -30px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 370px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="addItem">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
     {{--==========================================end fade in ============================--}}
     {{--================payment pop up =============--}}
@@ -827,7 +817,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>--}}
-                   <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">
                         <i class="fa fa-2x">×</i></span><span class="sr-only">Close</span>
                     </button>
@@ -941,7 +931,7 @@
                                     </div>
                                 </div>
                             </div>
-{{--=========================admin more payment==============--}}
+                            {{--=========================admin more payment==============--}}
                             <div id="multi-payment">
                                 <button type="button" class="close close-payment" style="margin: -10px 0px 0 0;"><i class="fa fa-2x">×</i></button>
                                 <div class="col-md-12 col-sm-9" style="padding:0;">
@@ -1360,5 +1350,5 @@
             });
         });
     </script>
-{{--============script pop up item ============--}}
+    {{--============script pop up item ============--}}
 @endsection
