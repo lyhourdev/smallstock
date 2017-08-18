@@ -18,6 +18,4 @@ class DataDetailOptionR
         $this->total_amount = $total_amount;
         $this->total_qty = $total_qty;
     }
-
-
 }

@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\CrudTrait;
+//use Backpack\CRUD\CrudTrait;
 
 class ProductionDetial extends Model
 {
-    use CrudTrait;
+//    use CrudTrait;
 
      /*
     |--------------------------------------------------------------------------
@@ -16,10 +16,10 @@ class ProductionDetial extends Model
     */
 
     protected $table = 'production_detial';
-    protected $primaryKey = 'id';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
-     protected $fillable = [];
+//    protected $primaryKey = 'id';
+//    // public $timestamps = false;
+//    // protected $guarded = ['id'];
+//     protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
 

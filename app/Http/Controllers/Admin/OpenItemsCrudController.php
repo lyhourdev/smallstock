@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\StaticHelper;
 use App\Models\OpenItems;
 use App\Models\OpenItemsDetail;
 use App\Models\User;
@@ -227,20 +228,22 @@ class OpenItemsCrudController extends CrudController
     public function store(StoreRequest $request)
     {
 //        dd($this->crud->request->request);
-//        dd($request->item);
+//        dd($request->title);
 //        $this->crud->request->request->add(['user_id'=>getUserID()]);
         // your additional operations before save here
+
         $redirect_location = parent::storeCrud();
+
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+//        dd($this->crud->entry->id);
+        StaticHelper::getDataDetailOption($request->data_item,$this->crud->entry->id,'open');
         return $redirect_location;
     }
 
     public function edit($id)
     {
-
         $this->crud->hasAccessOrFail('update');
-
         // get the info for that entry
         $this->data['entry'] = $this->crud->getEntry($id);
         $this->data['crud'] = $this->crud;
@@ -248,7 +251,6 @@ class OpenItemsCrudController extends CrudController
         $this->data['fields'] = $this->crud->getUpdateFields($id);
         $this->data['title'] = trans('backpack::crud.edit').' '.$this->crud->entity_name;
         $this->data['id'] = $id;
-
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
         return view($this->crud->getEditView(), $this->data);
     }

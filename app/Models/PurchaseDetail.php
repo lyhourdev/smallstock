@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\CrudTrait;
+//use Backpack\CRUD\CrudTrait;
 
 class PurchaseDetail extends Model
 {
-    use CrudTrait;
+//    use CrudTrait;
 
      /*
     |--------------------------------------------------------------------------
@@ -16,11 +16,11 @@ class PurchaseDetail extends Model
     */
 
     protected $table = 'purchase_detail';
-    protected $primaryKey = 'id';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
-     protected $fillable = [];
-    // protected $hidden = [];
+//    protected $primaryKey = 'id';
+//    // public $timestamps = false;
+//    // protected $guarded = ['id'];
+//     protected $fillable = [];
+//    // protected $hidden = [];
     // protected $dates = [];
 
     /*

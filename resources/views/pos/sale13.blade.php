@@ -132,7 +132,7 @@
                                 <td style="width:20%;"><span>$</span> 200</td>
                                 <td style="width: 10%">
                                     {{--<a class="btn btn-social-icon btn-facebook">--}}
-                                    {{--<i class="fa  fa-plus"></i>--}}
+                                        {{--<i class="fa  fa-plus"></i>--}}
                                     {{--</a>--}}
                                     <a class="" style="font-size: 18px; color: red;">
                                         <i class="fa fa-fw fa-trash-o"></i>
@@ -249,26 +249,26 @@
             </div>
             <div id="right-section">
                 {{--<div class="col-md-12">--}}
-                {{--<div class="input-group margin">--}}
-                {{--<div class="input-group-btn">--}}
-                {{--<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">All Category &nbsp;&nbsp; <span class="fa fa-caret-down"></span>--}}
-                {{--</button>--}}
-                {{--<ul class="dropdown-menu">--}}
-                {{--<li><a href="#">Rings</a></li>--}}
-                {{--<li><a href="#">Bracelets</a></li>--}}
-                {{--<li><a href="#">Necklaces</a></li>--}}
-                {{--<li><a href="#">Earrings</a></li>--}}
-                {{--<li><a href="#">Brooches</a></li>--}}
-                {{--<li><a href="#">Pendents</a></li>--}}
-                {{--<li><a href="#">Anklets</a></li>--}}
-                {{--<li><a href="#">Belly Chain</a></li>--}}
-                {{--</ul>--}}
-                {{--</div>--}}
-                {{--<input type="text" class="form-control" placeholder="Search product by category/name/code" style="background-color: #ffffff; color: #000000;">--}}
-                {{--<span class="input-group-btn">--}}
-                {{--<button type="button" class="btn btn-warning btn-flat"><i class="fa fa-fw fa-search"></i></button>--}}
-                {{--</span>--}}
-                {{--</div>--}}
+                    {{--<div class="input-group margin">--}}
+                        {{--<div class="input-group-btn">--}}
+                            {{--<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">All Category &nbsp;&nbsp; <span class="fa fa-caret-down"></span>--}}
+                            {{--</button>--}}
+                            {{--<ul class="dropdown-menu">--}}
+                                {{--<li><a href="#">Rings</a></li>--}}
+                                {{--<li><a href="#">Bracelets</a></li>--}}
+                                {{--<li><a href="#">Necklaces</a></li>--}}
+                                {{--<li><a href="#">Earrings</a></li>--}}
+                                {{--<li><a href="#">Brooches</a></li>--}}
+                                {{--<li><a href="#">Pendents</a></li>--}}
+                                {{--<li><a href="#">Anklets</a></li>--}}
+                                {{--<li><a href="#">Belly Chain</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                        {{--<input type="text" class="form-control" placeholder="Search product by category/name/code" style="background-color: #ffffff; color: #000000;">--}}
+                        {{--<span class="input-group-btn">--}}
+                        {{--<button type="button" class="btn btn-warning btn-flat"><i class="fa fa-fw fa-search"></i></button>--}}
+                    {{--</span>--}}
+                    {{--</div>--}}
                 {{--</div>--}}
                 <div class="col-md-12 cat-items-style">
                     <div id="slider-2" class="slider">
@@ -410,9 +410,9 @@
                     </div>
 
                 </div>
-                <div class="col-md-12">
+                    <div class="col-md-12">
 
-                </div>
+                    </div>
 
                 {{--====================end items==================--}}
             </div>
@@ -455,29 +455,29 @@
     </div>
 
     {{--<div class="modal fade" id="taxModal" tabindex="-1" role="dialog" aria-labelledby="taxModal" aria-hidden="true">--}}
-    {{--<div class="modal-dialog modal-sm">--}}
-    {{--<div class="modal-content">--}}
-    {{--<div class="modal-header">--}}
-    {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x">×</i></button>--}}
-    {{--<h4 class="modal-title" id="txModalLabel">Edit Order Tax</h4>--}}
-    {{--</div>--}}
-    {{--<div class="modal-body">--}}
-    {{--<div class="form-group">--}}
-    {{--<label for="order_tax_input">Order Tax</label>--}}
-    {{--<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">--}}
-    {{--<option selected="selected">No Tax</option>--}}
-    {{--<option>VAT @10%</option>--}}
-    {{--<option>GST @6%</option>--}}
-    {{--<option>VAT @20%</option>--}}
-    {{--<option>TAX @10%</option>--}}
-    {{--</select>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="modal-footer">--}}
-    {{--<button type="button" id="updateOrderTax" class="btn btn-primary">Update</button>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
+        {{--<div class="modal-dialog modal-sm">--}}
+            {{--<div class="modal-content">--}}
+                {{--<div class="modal-header">--}}
+                    {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x">×</i></button>--}}
+                    {{--<h4 class="modal-title" id="txModalLabel">Edit Order Tax</h4>--}}
+                {{--</div>--}}
+                {{--<div class="modal-body">--}}
+                    {{--<div class="form-group">--}}
+                        {{--<label for="order_tax_input">Order Tax</label>--}}
+                        {{--<select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">--}}
+                            {{--<option selected="selected">No Tax</option>--}}
+                            {{--<option>VAT @10%</option>--}}
+                            {{--<option>GST @6%</option>--}}
+                            {{--<option>VAT @20%</option>--}}
+                            {{--<option>TAX @10%</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="modal-footer">--}}
+                    {{--<button type="button" id="updateOrderTax" class="btn btn-primary">Update</button>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     {{--</div>--}}
 
     <div class="modal fade" id="viewCustomerModal" tabindex="-1" role="dialog" aria-labelledby="viewCustomerModal" aria-hidden="true">
@@ -602,7 +602,7 @@
                                 <div class="form-group person has-feedback">
                                     <label for="name">Name *</label>
                                     <input type="text" name="name" value="" class="form-control tip" id="name">
-                                </div>
+                                 </div>
 
                                 <div class="form-group has-feedback">
                                     <label for="phone">Phone *</label>
@@ -635,7 +635,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="addProductManual" tabindex="-1" role="dialog" aria-labelledby="addProductManual" aria-hidden="true">
+   <div class="modal fade" id="addProductManual" tabindex="-1" role="dialog" aria-labelledby="addProductManual" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -659,17 +659,17 @@
                             </div>
                         </div>
                         {{--<div class="form-group">--}}
-                        {{--<label for="mtax" class="col-sm-4 control-label">Product Tax *</label>--}}
+                            {{--<label for="mtax" class="col-sm-4 control-label">Product Tax *</label>--}}
 
-                        {{--<div class="col-sm-8">--}}
-                        {{--<select class="form-control">--}}
-                        {{--<option selected="selected">No Tax</option>--}}
-                        {{--<option>VAT @10%</option>--}}
-                        {{--<option>GST @6%</option>--}}
-                        {{--<option>VAT @20%</option>--}}
-                        {{--<option>TAX @10%</option>--}}
-                        {{--</select>--}}
-                        {{--</div>--}}
+                            {{--<div class="col-sm-8">--}}
+                                {{--<select class="form-control">--}}
+                                    {{--<option selected="selected">No Tax</option>--}}
+                                    {{--<option>VAT @10%</option>--}}
+                                    {{--<option>GST @6%</option>--}}
+                                    {{--<option>VAT @20%</option>--}}
+                                    {{--<option>TAX @10%</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
                         {{--</div>--}}
                         <div class="form-group">
                             <label for="mquantity" class="col-sm-4 control-label">Quantity *</label>
@@ -710,115 +710,115 @@
         </div>
     </div>
 
-    <div class="modal fade" id="searchProductFilter" tabindex="-1" role="dialog" aria-labelledby="searchProductFilter" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
+   <div class="modal fade" id="searchProductFilter" tabindex="-1" role="dialog" aria-labelledby="searchProductFilter" aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
                            <i class="fa fa-2x">×</i></span><span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
-                </div>
-                <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:300px;overflow:hidden;">
-                    <form class="form-horizontal" role="form" id="s_seModal">
-                        <table>
-                            <thead>
-                            <tr>
-                                <td style="padding:0;margin:0;border:1px;">
-                                    <input type="text" style="width:184px;border-right:none" class="form-control ui-autocomplete-input" id="fcode" autocomplete="off"></td>
-                                <td style="padding:0;margin:0;border:1px;">
-                                    <input type="text" style="width:239px;border-right:none" class="form-control ui-autocomplete-input" id="fdescription" autocomplete="off"></td>
-                                <td style="padding:0;margin:0;border:1px;">
-                                    <input type="text" style="width:145px;" class="form-control ui-autocomplete-input" id="ffloor" autocomplete="off"></td>
-                            </tr>
-                            </thead>
-                        </table>
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th style="width:45px;"></th>
-                                <th>Code</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Floor</th>
-                            </tr>
-                            </thead>
-                            <tbody class="floor">
+                   </button>
+                   <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
+               </div>
+               <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:300px;overflow:hidden;">
+                   <form class="form-horizontal" role="form" id="s_seModal">
+                       <table>
+                           <thead>
+                           <tr>
+                               <td style="padding:0;margin:0;border:1px;">
+                                   <input type="text" style="width:184px;border-right:none" class="form-control ui-autocomplete-input" id="fcode" autocomplete="off"></td>
+                               <td style="padding:0;margin:0;border:1px;">
+                                   <input type="text" style="width:239px;border-right:none" class="form-control ui-autocomplete-input" id="fdescription" autocomplete="off"></td>
+                               <td style="padding:0;margin:0;border:1px;">
+                                   <input type="text" style="width:145px;" class="form-control ui-autocomplete-input" id="ffloor" autocomplete="off"></td>
+                           </tr>
+                           </thead>
+                       </table>
+                       <table class="table table-bordered">
+                           <thead>
+                           <tr>
+                               <th style="width:45px;"></th>
+                               <th>Code</th>
+                               <th>Description</th>
+                               <th>Status</th>
+                               <th>Floor</th>
+                           </tr>
+                           </thead>
+                           <tbody class="floor">
 
-                            </tbody>
-                        </table>
-                    </form>
-                    <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;">
-                        <div class="ps-scrollbar-x" style="left: -30px; width: 0px;">
+                           </tbody>
+                       </table>
+                   </form>
+                   <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;">
+                       <div class="ps-scrollbar-x" style="left: -30px; width: 0px;">
 
-                        </div>
-                    </div>
-                    <div class="ps-scrollbar-y-rail" style="top: 0px; height: 270px; display: none; right: 3px;">
-                        <div class="ps-scrollbar-y" style="top: 0px; height: 0px;">
+                       </div>
+                   </div>
+                   <div class="ps-scrollbar-y-rail" style="top: 0px; height: 270px; display: none; right: 3px;">
+                       <div class="ps-scrollbar-y" style="top: 0px; height: 0px;">
 
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="addSearch">Submit</button>
-                </div>
-            </div>
-        </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-primary" id="addSearch">Submit</button>
+               </div>
+           </div>
+       </div>
     </div>
 
-    <div class="modal fade" id="searchProductFilterDetail" tabindex="-1" role="dialog" aria-labelledby="searchProductFilterDetail" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="fa fa-2x">×</i></span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
-                </div>
-                <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:400px;overflow:hidden;">
-                    <form class="form-horizontal" role="form" id="s_seModal">
-                        <table>
-                            <thead>
-                            <tr>
-                                <td style="border:1px;width:5%"><input type="text" class="form-control" id="chk" disabled=""></td>
-                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcode" autocomplete="off"></td>
-                                <td style="padding:0;margin:0;border:1px;width:25%"><input type="text" class="form-control ui-autocomplete-input" id="Pname" autocomplete="off"></td>
-                                <!--<td style="padding:0;margin:0;border:1px;"><input type="text" style="width:113px;border-right:none" class="form-control" id="Pdescription" /></td>-->
-                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcategory" autocomplete="off"></td>
-                                <td style="padding:0;margin:0;border:1px;width:10%"><input type="text" class="form-control ui-autocomplete-input" id="Pprice" autocomplete="off"></td>
-                                <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control" id="dd" disabled=""></td>
-                            </tr>
-                            </thead>
-                            <tbody>
+   <div class="modal fade" id="searchProductFilterDetail" tabindex="-1" role="dialog" aria-labelledby="searchProductFilterDetail" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><i class="fa fa-2x">×</i></span><span class="sr-only">Close</span></button>
+                   <h4 class="modal-title" id="prModalLabel">Search Filter</h4>
+               </div>
+               <div class="modal-body scroll_F ps-container" id="pr_popover_content" style="height:400px;overflow:hidden;">
+                   <form class="form-horizontal" role="form" id="s_seModal">
+                       <table>
+                           <thead>
+                           <tr>
+                               <td style="border:1px;width:5%"><input type="text" class="form-control" id="chk" disabled=""></td>
+                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcode" autocomplete="off"></td>
+                               <td style="padding:0;margin:0;border:1px;width:25%"><input type="text" class="form-control ui-autocomplete-input" id="Pname" autocomplete="off"></td>
+                               <!--<td style="padding:0;margin:0;border:1px;"><input type="text" style="width:113px;border-right:none" class="form-control" id="Pdescription" /></td>-->
+                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control ui-autocomplete-input" id="Pcategory" autocomplete="off"></td>
+                               <td style="padding:0;margin:0;border:1px;width:10%"><input type="text" class="form-control ui-autocomplete-input" id="Pprice" autocomplete="off"></td>
+                               <td style="padding:0;margin:0;border:1px;width:20%"><input type="text" class="form-control" id="dd" disabled=""></td>
+                           </tr>
+                           </thead>
+                           <tbody>
 
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered table-striped table-hover">
-                            <thead>
-                            <tr>
-                                <th style="width:5%;">
-                                    <center>
-                                        <input class="checkbox checkth input-xs" type="checkbox" name="check">
-                                    </center>
-                                </th>
-                                <th style="width:20%">Product Code</th>
-                                <th style="width:25%">Product Name</th>
-                                <!--<th style="width:104px">Description</th>-->
-                                <th style="width:20%">Category</th>
-                                <th style="width:10%">Price</th>
-                                <!--<th style="width:200px">strap</th>-->
-                                <th style="width:20px"><i class="fa fa-chain"></i></th>
-                            </tr>
-                            </thead>
-                            <tbody class="test">
+                           </tbody>
+                       </table>
+                       <table class="table table-bordered table-striped table-hover">
+                           <thead>
+                           <tr>
+                               <th style="width:5%;">
+                                   <center>
+                                       <input class="checkbox checkth input-xs" type="checkbox" name="check">
+                                   </center>
+                               </th>
+                               <th style="width:20%">Product Code</th>
+                               <th style="width:25%">Product Name</th>
+                               <!--<th style="width:104px">Description</th>-->
+                               <th style="width:20%">Category</th>
+                               <th style="width:10%">Price</th>
+                               <!--<th style="width:200px">strap</th>-->
+                               <th style="width:20px"><i class="fa fa-chain"></i></th>
+                           </tr>
+                           </thead>
+                           <tbody class="test">
 
-                            </tbody>
-                        </table>
-                    </form>
-                    <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: -30px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 370px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="addItem">Submit</button>
-                </div>
-            </div>
-        </div>
+                           </tbody>
+                       </table>
+                   </form>
+                   <div class="ps-scrollbar-x-rail" style="width: 0px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: -30px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 370px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-primary" id="addItem">Submit</button>
+               </div>
+           </div>
+       </div>
     </div>
     {{--==========================================end fade in ============================--}}
     {{--================payment pop up =============--}}
@@ -827,7 +827,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {{--<button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>--}}
-                    <button type="button" class="close" data-dismiss="modal">
+                   <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">
                         <i class="fa fa-2x">×</i></span><span class="sr-only">Close</span>
                     </button>
@@ -941,7 +941,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--=========================admin more payment==============--}}
+{{--=========================admin more payment==============--}}
                             <div id="multi-payment">
                                 <button type="button" class="close close-payment" style="margin: -10px 0px 0 0;"><i class="fa fa-2x">×</i></button>
                                 <div class="col-md-12 col-sm-9" style="padding:0;">
@@ -1360,5 +1360,5 @@
             });
         });
     </script>
-    {{--============script pop up item ============--}}
+{{--============script pop up item ============--}}
 @endsection

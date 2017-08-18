@@ -24,7 +24,7 @@ class OpenItems extends Model
 
     public function setData_itemAttribute($value)
     {
-        dd($value);
+//        dd($value);
     }
 
     /*

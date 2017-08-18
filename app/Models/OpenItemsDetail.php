@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\CrudTrait;
+//use Backpack\CRUD\CrudTrait;
 
 class OpenItemsDetail extends Model
 {
-    use CrudTrait;
+//    use CrudTrait;
 
      /*
     |--------------------------------------------------------------------------
@@ -16,8 +16,8 @@ class OpenItemsDetail extends Model
     */
 
     protected $table = 'open_items_detail';
-    protected $primaryKey = 'id';
-     public $timestamps = true;
+//    protected $primaryKey = 'id';
+//     public $timestamps = true;
     // protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
