@@ -19,14 +19,11 @@ class StaticHelper
         $items = [];
         $total_qty = 0;
         $total_amount = 0;
-
         if($data == null){ return null ;}
-
         if(count($data)>0)
         {
             foreach ($data as $row){
                 //dd($row['qty']);
-
                 $item_id = isset($row['item_id'])?$row['item_id']: 0;
                 $unit = isset($row['unit'])?$row['unit']: '';
                 $qty = isset($row['qty'])?$row['qty']: 0;

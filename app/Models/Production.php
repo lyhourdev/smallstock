@@ -23,7 +23,7 @@ class Production extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    protected $attributes = [
+    protected $appends = [
         'data' => [],
     ];
 
