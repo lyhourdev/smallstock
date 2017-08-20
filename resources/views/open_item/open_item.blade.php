@@ -1,3 +1,6 @@
+
+<?php
+?>
 <div class="row">
     <div class="col-md-6">
             @include('open_item.fields.my_text',array('field' =>[

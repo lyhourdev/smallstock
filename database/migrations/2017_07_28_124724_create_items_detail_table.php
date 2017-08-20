@@ -15,8 +15,10 @@ class CreateItemsDetailTable extends Migration
     {
         Schema::create('items_detail', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('item_ref_id')->index()->nullable();
+            $table->integer('ref_id')->nullable();
+            $table->string('ref_type')->nullable();
             $table->integer('item_id')->index()->nullable();
+            $table->string('item_code')->index()->nullable();
             $table->double('qty')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();

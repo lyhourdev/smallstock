@@ -15,6 +15,8 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('ref_id')->nullable();
+            $table->string('ref_type')->nullable();
             $table->integer('category_id')->nullable();
             $table->string('item_code')->nullable();
             $table->string('title')->index()->nullable();

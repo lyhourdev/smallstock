@@ -6,14 +6,15 @@
  * Time: 9:08 AM
  */
 namespace App\Helpers;
+use App\Models\Item;
 use App\Models\ItemDetailOption;
 
 class StaticHelper
 {
-    static function abc(){
-        return 'sadasdsd';
+    static function getR(){
+        return rand(11111, 99999) . time() . rand(1000, 5000);
     }
-    static function getDataDetailOption($data,$ref_id = 0, $ref_type = '')
+    static function getDataDetailOption($data,$ref_id = 0, $ref_type = '',$id__ = 0)
     {
 
         $items = [];
@@ -24,6 +25,8 @@ class StaticHelper
         {
             foreach ($data as $row){
 //                dd($row['qty']);
+                $open_detail_id_ = isset($row['open_detail_id_'])?$row['open_detail_id_']: 0;
+                $iidd = isset($row['id'])?$row['id']: 0;
                 $item_code = isset($row['item_code'])?$row['item_code']: 0;
                 $title = isset($row['item_title'])?$row['item_title']: '';
                 $unit = isset($row['unit'])?$row['unit']: '';
@@ -43,6 +46,8 @@ class StaticHelper
                         foreach ($_option as $row2)
                         {
 //                            dd($row2);
+                            $open_detail_id_2 = isset($row['open_detail_id_'])?$row['open_detail_id_']: 0;
+                            $iidd2 = isset($row['id'])?$row['id']: 0;
                             $item_code2 = isset($row2['item_code'])?$row2['item_code']: 0;
                             $title2 = isset($row['item_title'])?$row['item_title']: '';
                             $unit2 = isset($row2['unit'])?$row2['unit']: '';
@@ -53,6 +58,8 @@ class StaticHelper
                             $_price += $amount2;
                             if($item_code2 !='' && $qty2 > 0) {
                                 $option[] = [
+                                   'open_detail_id_2' => $open_detail_id_2 ,
+                                   'iidd2' => $iidd2 ,
                                    'item_code' => $item_code2 ,
                                    'title' => $title2 ,
                                    'unit' =>  $unit2 ,
@@ -70,7 +77,7 @@ class StaticHelper
                     }
 //dd($option);
 
-                    $item = new ItemDetailOption($item_code ,$title ,$unit, $qty ,$price ,$discount,$option,$ref_id,$ref_type,$note,'');
+                    $item = new ItemDetailOption($item_code ,$title ,$unit, $qty ,$price ,$discount,$option,$ref_id,$ref_type,$note,'',$id__,$iidd,$open_detail_id_);
 
 
                     $items[] = $item;
@@ -89,4 +96,9 @@ class StaticHelper
         return new DataDetailOptionR($items,$total_qty,$total_amount);
 
     }
+
+    static function getItemTitle($id){
+        return Item::select('id','item_code','title','unit')->find($id);
+    }
+
 }

@@ -10,9 +10,144 @@
                 </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding" id="all-table">
-                {{--style="border-left:6px solid #ccc!important; border-color: #2196F3!important; background-color: #ddffff!important;"--}}
-            </div>
+            @if(isset($open_items_detail))
+                <div class="box-body table-responsive no-padding" id="all-table">
+                    <table class="table table-hover">
+                    <tbody id="table-tbody">
+                    <tr>
+                        <th>Item</th>
+                        <th>Name</th>
+                        <th>Unit</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>note</th>
+                        <th><a hidden="#" class="btn btn-xs btn-primary btn-flat btn-add-new" data-sub_check="table-tbody"
+                               data-nn="0">+</a></th>
+                    </tr>
+                    @foreach($open_items_detail as $row)
+                        <?php
+                            $r = \App\Helpers\StaticHelper::getR();
+                            $item_code_ = \App\Helpers\StaticHelper::getItemTitle($row->item_id)->item_code;
+                            $item_title_ = \App\Helpers\StaticHelper::getItemTitle($row->item_id)->title;
+                            $unit_ = \App\Helpers\StaticHelper::getItemTitle($row->item_id)->unit;
+                            $iidd =  isset(\App\Helpers\StaticHelper::getItemTitle($row->item_id)->id)?\App\Helpers\StaticHelper::getItemTitle($row->item_id)->id:0;
+                            $ttooaall = $row->cost * $row->qty;
+                        ?>
+                        <tr>
+                            <input type="hidden" name="data_item[{{$r}}][open_detail_id_]" style="width: 100%" class="form-control item_code" value="{{$row->id}}">
+                            <input type="hidden" name="data_item[{{$r}}][id]" style="width: 100%" class="form-control item_code" value="{{$iidd}}">
+                            <td>
+                                <input name="data_item[{{$r}}][item_code]" style="width: 100%" class="form-control item_code" value="{{$item_code_}}">
+                            </td>
+                            <td>
+                                <input name="data_item[{{$r}}][item_title]" style="width: 100%" class="form-control item_title" value="{{$item_title_}}">
+                            </td>
+                            <td style="width: 100px;">
+                                <input type="text" name="data_item[{{$r}}][unit]" class="form-control unit" value="{{$unit_}}">
+                            </td>
+                            <td style="width: 100px;">
+                                <input type="number" name="data_item[{{$r}}][qty]" class="form-control qty" value="{{$row->qty}}">
+                            </td>
+                            <td style="width: 100px;">
+                                <input type="number" name="data_item[{{$r}}][price]" value="{{$row->cost}}" class="form-control price">
+                            </td>
+                            <td style="width: 100px;">
+                                <input type="number" value="{{$ttooaall}}" class="form-control total">
+                            </td>
+                            <td style="width: 180px;">
+                                <input type="text" name="data_item[{{$r}}][note]" value="" class="form-control qty">
+                            </td>
+                            <td style="width: 100px;">
+                                <a href="#" class="btn btn-xs btn-primary btn-flat btn-add-sub" data-i1="{{$r}}">+</a>
+                                <a href="#" class="btn btn-xs btn-danger btn-flat btn-del">-</a>
+                            </td>
+                        </tr>
+                        @if(count(json_decode($row->item_detail,true)) > 0)
+                                <tr class="c__" data-tr="0">
+                                    <td colspan="8"
+                                        style="border-left:6px solid #ccc!important; border-color: #2196F3!important; background-color: #ddecff!important;">
+                                        <div class="table_row_slider" style="">
+                                            <div class="m-t-10 m-b-10 p-l-10 p-r-10 p-t-10 p-b-10">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <table class="table table-hover">
+                                                            <tbody id="xnxx">
+                                                            <tr>
+                                                                <th>Item</th>
+                                                                <th>Name</th>
+                                                                <th>Unit</th>
+                                                                <th>Qty</th>
+                                                                <th>Price</th>
+                                                                <th>Total</th>
+                                                                <th>note</th>
+                                                                <th><a hidden="#" class="btn btn-xs btn-primary btn-flat btn-add-new"
+                                                                       data-sub_check="xnxx" data-i1="{{$r}}">+</a></th>
+                                                            </tr>
+                                                            <?php
+                                                            $r2 = \App\Helpers\StaticHelper::getR();
+                                                            ?>
+                                                            @foreach(json_decode($row->item_detail) as $row1)
+                                                            <tr>
+                                                                <input type="hidden" name="data_item[{{$r}}][option][{{$r2}}][item_code]"
+                                                                       style="width: 150px" class="form-control item_code" value="{{$row1->item_code}}">
+                                                                <td>
+                                                                    <input name="data_item[{{$r}}][option][{{$r2}}][item_code]"
+                                                                           style="width: 150px" class="form-control item_code" value="{{$row1->item_code}}">
+                                                                </td>
+                                                                <td>
+                                                                    <input name="data_item[{{$r}}][option][{{$r2}}][item_title]"
+                                                                           style="width: 200px" class="form-control item_title" value="{{$row1->title}}">
+                                                                </td>
+                                                                <td style="width: 100px;">
+                                                                    <input type="text"
+                                                                           name="data_item[{{$r}}][option][{{$r2}}][unit]"
+                                                                           value="{{$row1->unit}}" class="form-control unit" >
+                                                                </td>
+                                                                <td style="width: 100px;">
+                                                                    <input type="number"
+                                                                           name="data_item[{{$r}}][option][{{$r2}}][qty]"
+                                                                           value="{{$row1->qty}}" class="form-control qty">
+                                                                </td>
+                                                                <td style="width: 100px;">
+                                                                    <input type="number"
+                                                                           name="data_item[{{$r}}][option][{{$r2}}][price]"
+                                                                           value="{{$row1->price}}" class="form-control price">
+                                                                </td>
+                                                                <td style="width: 100px;">
+                                                                    <input type="number" value="{{$row1->qty * $row1->price}}" class="form-control total">
+                                                                </td>
+                                                                <td style="width: 180px;">
+                                                                    <input type="text"
+                                                                           name="data_item[{{$r}}][option][{{$r2}}][note]"
+                                                                           value="" class="form-control qty">
+                                                                </td>
+                                                                <td style="width: 180px;">
+                                                                    <a href="#" class="btn btn-xs btn-primary btn-flat" disabled="disabled">+</a>
+                                                                    <a href="#" class="btn btn-xs btn-danger btn-flat btn-del">+</a>
+                                                                </td>
+                                                            </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                        @endif
+                    @endforeach
+                    </tbody>
+                </table>
+                </div>
+            @else
+                <div class="box-body table-responsive no-padding" id="all-table">
+                    {{--style="border-left:6px solid #ccc!important; border-color: #2196F3!important; background-color: #ddffff!important;"--}}
+                </div>
+            @endif
+
             <!-- /.box-body -->
         </div>
     </div>
@@ -39,6 +174,7 @@
         <script src="{{ asset('vendor/adminlte/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
         <script>
             $(".col-md-8").attr('class', 'col-md-12');
+            $(".skin-blue-light").attr('class', 'skin-blue-light sidebar-mini   pace-done pace-done sidebar-collapse');
             var name__ = "{{$field['name']}}";
 
             function getSellect2(obj) {
@@ -76,12 +212,13 @@
                 var i1 = getRNum();
                 var html = '<tr>\n' +
                     //                    '                            <td style="width: 20px;">'+detID_+'</td>\n' +
-                    '                            <td>\n' +
-                    '                                <select name="data_' + name__ + '[' + i1 + '][item_code]" style="width: 150px"\n' +
-                    '                                        class="form-control item_code">\n' +
-                                        '                                   <option value="0"></option>' +
-                                        '                                </select>\n' +
-                    '                            </td>\n' +                    '                            <td>\n' +
+//                    '                            <td>\n' +
+//                    '                                <select name="data_' + name__ + '[' + i1 + '][item_code]" style="width: 150px"\n' +
+//                    '                                        class="form-control item_code">\n' +
+//                                        '                                   <option value="0"></option>' +
+//                                        '                                </select>\n' +
+//                    '                            </td>\n' +
+                    '<td>\n' +
                     '                                <input name="data_' + name__ + '[' + i1 + '][item_code]" style="width: 100%"\n' +
                     '                                        class="form-control item_code">\n' +
                     //                    '                                   <option value="0"></option>' +
@@ -108,7 +245,7 @@
                     '                            </td>\n' +
                     <?php }?>
                         '                            <td style="width: 180px;">\n' +
-                    '                                <input type="text" name="data_' + name__ + '[' + i1 + '][node]" value="" class="form-control qty">\n' +
+                    '                                <input type="text" name="data_' + name__ + '[' + i1 + '][note]" value="" class="form-control qty">\n' +
                     '                            </td>\n' +
                         '                            <td style="width: 100px;">\n' +
                     '                                <a href="#" class="btn btn-xs btn-primary btn-flat btn-add-sub" data-i1="' + i1 + '">+</a>\n' +
@@ -124,11 +261,12 @@
                 var i4 = getRNum();
                 var html = '<tr>\n' +
                     //                    '                            <td style="width: 20px;">'+detID_+'</td>\n' +
-                    '                            <td>\n' +
-                    '                                <select name="data_' + name__ + '[' + i1 + '][option][' + i3 + '][item_code]" style="width: 150px"\n' +
-                    '                                        class="form-control item_code">\n' +
-                                        '                                   <option value="0"></option>' +
-                                        '                                </select>\n' +   '                            <td>\n' +
+//                    '                            <td>\n' +
+//                    '                                <select name="data_' + name__ + '[' + i1 + '][option][' + i3 + '][item_code]" style="width: 150px"\n' +
+//                    '                                        class="form-control item_code">\n' +
+//                                        '                                   <option value="0"></option>' +
+//                                        '                                </select>\n' +   '' +
+                    '<td>\n' +
                     '                                <input name="data_' + name__ + '[' + i1 + '][option][' + i3 + '][item_code]" style="width: 150px"\n' +
                     '                                        class="form-control item_code">\n' +
                     //                    '                                   <option value="0"></option>' +
@@ -155,7 +293,7 @@
                     '                            </td>\n' +
                     <?php }?>
                         '                            <td style="width: 180px;">\n' +
-                    '                                <input type="text" name="data_' + name__ + '[' + i1 + '][option][' + i3 + '][node]" value="" class="form-control qty">\n' +
+                    '                                <input type="text" name="data_' + name__ + '[' + i1 + '][option][' + i3 + '][note]" value="" class="form-control qty">\n' +
                     '                            </td>\n' +
                         '                            <td style="width: 180px;">\n' +
                     '                                <a href="#" class="btn btn-xs btn-primary btn-flat" disabled="disabled">+</a>\n' +
@@ -171,7 +309,7 @@
                     '                                                    <tbody id="' + tbody + '">\n' +
                     '                                                        <tr>\n' +
                     //                    '                                                            <th>ID</th>\n' +
-                    '                                                            <th>Category</th>\n' +
+//                    '                                                            <th>Category</th>\n' +
                     '                                                            <th>Item</th>\n' +
                     '                                                            <th>Name</th>\n' +
                     '                                                            <th>Unit</th>\n' +
@@ -180,7 +318,7 @@
                         '                                                            <th>Price</th>\n' +
                     '                                                            <th>Total</th>\n' +
                     <?php }?>
-                        '                                                            <th>Node</th>\n' +
+                        '                                                            <th>note</th>\n' +
                     '                                                            <th><a hidden="#" class="btn btn-xs btn-primary btn-flat btn-add-new" data-sub_check="' + tbody + '" data-nn="0">+</a></th>\n' +
                     //                    '                                                            <th></th>\n' +
                     '                                                        </tr>\n' +
@@ -191,9 +329,10 @@
             }//table-tbody
 
             jQuery(document).ready(function ($) {
-                $('#all-table').append(getTable('table-tbody'));
+                <?php if (!isset($open_items_detail)){ ?>
+               $('#all-table').append(getTable('table-tbody'));
                 $('#table-tbody').append(getHtmlTable());
-
+                <?php }?>
                 $('body').delegate('.btn-add-new', 'click', function (e) {
                     e.preventDefault();
                     var value__ = $(this).data("sub_check");
@@ -225,7 +364,7 @@
                             '                                                    <tbody id="xnxx">\n' +
                             '                                                        <tr>\n' +
                             //                    '                                                            <th>ID</th>\n' +
-                            '                                                            <th>Category</th>\n' +
+//                            '                                                            <th>Category</th>\n' +
                             '                                                            <th>Item</th>\n' +
                             '                                                            <th>Name</th>\n' +
 
@@ -235,7 +374,7 @@
                                 '                                                            <th>Price</th>\n' +
                             '                                                            <th>Total</th>\n' +
                             <?php }?>
-                                '                                                            <th>Node</th>\n' +
+                                '                                                            <th>note</th>\n' +
 
                             '                                                            <th><a hidden="#" class="btn btn-xs btn-primary btn-flat btn-add-new" data-sub_check="xnxx" data-i1="' + main_id + '">+</a></th>\n' +
                             //                    '                                                            <th></th>\n' +

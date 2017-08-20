@@ -35,11 +35,27 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapLyhourRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
 
         //
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapLyhourRoutes()
+    {
+        Route::middleware('lyhour')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/lyhour.php'));
     }
 
     /**

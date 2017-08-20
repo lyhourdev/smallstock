@@ -80,12 +80,13 @@ class OpenItemsCrudController extends CrudController
             'model' => "App\Models\User",
         ]);
 
-        $this->crud->addField([
-            'name' => 'test',
-            'label' => 'Open Number',
-            'type' => 'view',
-            'view' => 'test',
-        ]);
+//        dd($this->crud);
+//
+//        $this->crud->addField([
+//            'name' => 'test',
+//            'label' => 'Open Number',
+//            'type' => 'text'
+//        ]);
 
         $this->crud->addField([
             'name' => 'custom-ajax-button',
@@ -97,6 +98,7 @@ class OpenItemsCrudController extends CrudController
             'name' => 'description',
             'label' => 'description',
             'type' => 'textarea',
+
         ]);
 
         $this->crud->addField([
@@ -245,22 +247,35 @@ class OpenItemsCrudController extends CrudController
     {
         $this->crud->hasAccessOrFail('update');
         // get the info for that entry
+
+
+
+//        $data_array['open_items_detail'] = OpenItemsDetail::where('open_id',$id)->get();
+
         $this->data['entry'] = $this->crud->getEntry($id);
         $this->data['crud'] = $this->crud;
         $this->data['saveAction'] = $this->getSaveAction();
         $this->data['fields'] = $this->crud->getUpdateFields($id);
         $this->data['title'] = trans('backpack::crud.edit').' '.$this->crud->entity_name;
         $this->data['id'] = $id;
+//        dd($this->data);
+//        $this->data['open_items_detail'] = OpenItemsDetail::where('open_id',$id)->get();
+//        dd($this->data->add(['open_items_detail'=>OpenItemsDetail::where('open_id',$id)->get()]));
         // load the view from /resources/views/vendor/backpack/crud/ if it exists, otherwise load the one in the package
-        return view($this->crud->getEditView(), $this->data);
+        $open_items_detail = OpenItemsDetail::where('open_id',$id)->get();
+        return view($this->crud->getEditView(), $this->data,['open_items_detail'=> isset($open_items_detail)?$open_items_detail:[]]);
     }
 
-    public function update(UpdateRequest $request)
+
+    public function update(UpdateRequest $request,$id)
     {
+//        dd($id);
         // your additional operations before save here
         $redirect_location = parent::updateCrud();
+        StaticHelper::getDataDetailOption($request->data_item,$this->crud->entry->id,'open',$id);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
+//        dd($redirect_location);
         return $redirect_location;
     }
 }
