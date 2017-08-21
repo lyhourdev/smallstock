@@ -134,8 +134,8 @@
                                     {{--<a class="btn btn-social-icon btn-facebook">--}}
                                     {{--<i class="fa  fa-plus"></i>--}}
                                     {{--</a>--}}
-                                    <a class="" style="font-size: 18px; color: red;">
-                                        <i class="fa fa-fw fa-trash-o"></i>
+                                    <a class="btn btn-xs btn-default" style="font-size: 18px; color: rgba(160,8,22,0.84);">
+                                        <i class="fa fa-fw fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -149,8 +149,8 @@
                                     {{--<a class="btn btn-social-icon btn-facebook">--}}
                                     {{--<i class="fa  fa-plus"></i>--}}
                                     {{--</a>--}}
-                                    <a class=" " style="font-size: 18px; color: red;">
-                                        <i class="fa fa-fw fa-trash-o"></i>
+                                    <a class="btn btn-xs btn-default" style="font-size: 18px; color: rgba(160,8,22,0.84);">
+                                        <i class="fa fa-fw fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>

@@ -99,7 +99,13 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
+
                     <ul class="treeview-menu">
+                        <li><a href="{{url('/admin/all-report')}}">
+                                <i class="fa fa-fw fa-calendar-check-o"></i>
+                                <span>All Report</span>
+                            </a>
+                        </li>
                         <li><a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
                                 <span>Chart Report</span>
@@ -125,7 +131,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">
+                        <li>
+                            <a href="#">
                                 <i class="fa fa-money"></i>
                                 <span>Profit Report</span>
                                 <span class="pull-right-container">

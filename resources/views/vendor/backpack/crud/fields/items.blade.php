@@ -89,8 +89,8 @@
                                                             ?>
                                                             @foreach(json_decode($row->item_detail) as $row1)
                                                             <tr>
-                                                                <input type="hidden" name="data_item[{{$r}}][option][{{$r2}}][item_code]"
-                                                                       style="width: 150px" class="form-control item_code" value="{{$row1->item_code}}">
+                                                                <input type="hidden" name="data_item[{{$r}}][option][{{$r2}}][id]"
+                                                                       style="width: 150px" class="form-control item_code" value="{{$row1->iidd}}">
                                                                 <td>
                                                                     <input name="data_item[{{$r}}][option][{{$r2}}][item_code]"
                                                                            style="width: 150px" class="form-control item_code" value="{{$row1->item_code}}">

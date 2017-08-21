@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+Route::group(['prefix' => 'admin','namespace'=>'Admin', 'middleware' => 'admin'], function()
 {
     Route::get('/test', function () {
         return view('test');
@@ -80,26 +80,28 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
         return view('pos.home');
     });
 
+    Route::get('all-report','ReportController@tableReport');
+
     // Backpack\CRUD: Define the resources for the entities you want to CRUD.
-    CRUD::resource('item-category', 'Admin\ItemCategoryCrudController');
-    CRUD::resource('customers', 'Admin\CustomersCrudController');
-    Route::get('api/customer', 'Admin\CustomersCrudController@index2');
-    Route::get('api/customer/{id}', 'Admin\CustomersCrudController@show2');
-    Route::get('api/item-category', 'Admin\ItemCategoryCrudController@index2');
-    Route::get('api/item-category/{id}', 'Admin\ItemCategoryCrudController@show2');
+    CRUD::resource('item-category', 'ItemCategoryCrudController');
+    CRUD::resource('customers', 'CustomersCrudController');
+    Route::get('api/customer', 'CustomersCrudController@index2');
+    Route::get('api/customer/{id}', 'CustomersCrudController@show2');
+    Route::get('api/item-category', 'ItemCategoryCrudController@index2');
+    Route::get('api/item-category/{id}', 'ItemCategoryCrudController@show2');
 
 
-    CRUD::resource('invoices', 'Admin\InvoiceCrudController');
-    CRUD::resource('open-items', 'Admin\OpenItemsCrudController');
-    CRUD::resource('purchase', 'Admin\PurchaseCrudController');
-    CRUD::resource('production', 'Admin\ProductionCrudController');
-    CRUD::resource('items', 'Admin\ItemCrudController');
-    CRUD::resource('checklist', 'Admin\CheckListCrudController');
+    CRUD::resource('invoices', 'InvoiceCrudController');
+    CRUD::resource('open-items', 'OpenItemsCrudController');
+    CRUD::resource('purchase', 'PurchaseCrudController');
+    CRUD::resource('production', 'ProductionCrudController');
+    CRUD::resource('items', 'ItemCrudController');
+    CRUD::resource('checklist', 'CheckListCrudController');
 
     // [...] other routes
 
-    Route::get('ajax-customer-phone', 'Admin\CustomersCrudController@getPhones');
-    Route::get('ajax-customer-name', 'Admin\CustomersCrudController@getName');
-    Route::get('ajax-open-item-number', 'Admin\OpenItemsCrudController@getOpenNumber');
-    Route::get('ajax-open-item-user', 'Admin\OpenItemsCrudController@getUser');
+    Route::get('ajax-customer-phone', 'CustomersCrudController@getPhones');
+    Route::get('ajax-customer-name', 'CustomersCrudController@getName');
+    Route::get('ajax-open-item-number', 'OpenItemsCrudController@getOpenNumber');
+    Route::get('ajax-open-item-user', 'OpenItemsCrudController@getUser');
 });

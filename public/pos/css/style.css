@@ -28,13 +28,13 @@
 
     width: 33.9%;
     height:900px;
-    background-color: #d2d6de;
+    background-color: #BCBEC0;
     float: left;
 }
 #right-section{
     width: 66%;
     height: 900px;
-    background-color: #bcbec0;
+    background-color: #ffffff;
     float: right;
 }
 /*============import style==========*/
@@ -98,7 +98,7 @@
     min-width: 130px;
     min-height: 185px;
     text-align:  center !important;
-    background-color: rgb(210, 214, 222);
+    background-color: rgb(188, 190, 192);
     border-radius: 10px;
 }
 .name-style{
@@ -138,26 +138,26 @@
 }
 /*!*==============font awsome============*!*/
 .btn-social-icon>:first-child {
-position: absolute;
-left: 0;
-top: 0;
-bottom: 0;
-width: 18px !important;
-line-height: 18px !important;
-font-size: 1em !important;
-text-align: center;
-border-right: 1px solid rgba(0,0,0,0.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px !important;
+    line-height: 18px !important;
+    font-size: 1em !important;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
 }
 .btn-social-icon {
-position: relative;
-/*padding-left: 44px;*/
-text-align: left;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-height: 20px !important;
-width: 20px !important;
-padding: 1px !important;
+    position: relative;
+    /*padding-left: 44px;*/
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px !important;
+    width: 20px !important;
+    padding: 1px !important;
 }
 /*===========ipad container =======*/
 .content-wrapper{
@@ -175,7 +175,7 @@ padding: 1px !important;
 }
 .panel-height{
     /*height: 688px;*/
-    background-color: #ffffff;
+    background-color: #BCBEC0;
 }
 .table-show-pro{
     width:100%;
@@ -217,7 +217,7 @@ table {
     border-top: #ffffff;
 }
 .table thead th {
-    background: #eeeeee;
+    background: #bcbec0;
     vertical-align: bottom;
 }
 .table tbody > tr:nth-child(odd) > td,

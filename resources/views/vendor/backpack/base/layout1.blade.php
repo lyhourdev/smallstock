@@ -79,9 +79,16 @@
             {{--<span class="icon-bar"></span>--}}
             {{--<span class="icon-bar"></span>--}}
           {{--</a>--}}
-
-          @include('backpack::inc.menu1')
+            <div style="background-color: #3c8dbc !important; height: 50px !important;">
+                @include('backpack::inc.menu1')
+            </div>
+            <div class="row" style="background-color: #deeddb !important;">
+                @section('hearder-report')
+                @show
+            </div>
         </nav>
+
+
       </header>
 
       <!-- =============================================== -->

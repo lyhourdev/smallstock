@@ -58,8 +58,8 @@ class StaticHelper
                             $_price += $amount2;
                             if($item_code2 !='' && $qty2 > 0) {
                                 $option[] = [
-                                   'open_detail_id_2' => $open_detail_id_2 ,
-                                   'iidd2' => $iidd2 ,
+                                   'open_detail_id_' => $open_detail_id_2 ,
+                                   'iidd' => $iidd2 ,
                                    'item_code' => $item_code2 ,
                                    'title' => $title2 ,
                                    'unit' =>  $unit2 ,

@@ -108,7 +108,9 @@ class ItemDetailOption
         $m->qty = $this->qty;
         $m->cost = $this->price;
         $m->note = $this->note;
+
         $m->item_detail = json_encode($this->option);
+
         if($m->save())
         {
             $item = $this->insertItemTran();
@@ -117,8 +119,8 @@ class ItemDetailOption
 //                    dd($row);
                     $iitem = Item::where('item_code',$row->item_code)->first();
                     if ($this->open_id > 0){
-                        $ii = ItemDetail::where('ref_type',$this->ref_type)->where('ref_id',$this->ref_id)->where('item_id','');
-
+                        dd($row->iidd);
+                        $ii = ItemDetail::where('ref_type',$this->ref_type)->where('ref_id',$this->ref_id)->where('item_id',$row->iidd)->first();
                     }else{
                         $ii = new ItemDetail();
 
